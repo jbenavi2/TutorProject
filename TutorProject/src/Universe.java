@@ -5,6 +5,8 @@ public class Universe {
 		// TODO Auto-generated method stub
 		System.out.println("Hello World!");
 		System.out.println("Hi again");
+		
+		System.out.println("TEST 1");
 
 	}
 
