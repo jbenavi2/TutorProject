@@ -1,13 +1,16 @@
 //Andrew Bui
-public class Universe {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hello World!");
-		System.out.println("Hi again");
+import javax.swing.*;
+
+public class Universe extends JApplet{
+
+	public void init() {
+		Assessor assessor = new Assessor(3);
+		getContentPane().add(assessor);
 		
-		System.out.println("TEST 1");
-
+		
+		setSize (400,400);
+		
 	}
 
 }
