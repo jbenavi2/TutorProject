@@ -2,10 +2,12 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.awt.event.*; //added by Javier
 
 
-public class Universe
+public class Universe extends JFrame
 {
+	
 	public static void main(String[] args) 
 	{
 		//Labels Containing Names of Team Members
@@ -44,13 +46,15 @@ public class Universe
 		
 		//!!temp. switch out for other class files.!!
 		JPanel panel1 = new JPanel();
-		JPanel panel2 = new JPanel();
+		//JPanel panel2 = new JPanel();
+		Assessor panel2 = new Assessor();//added by Javier
 		JPanel panel3 = new JPanel();
 		JPanel panel4 = new JPanel();
+		panel2.changeState(1);//added by Javier for testing
 		
 		//add name labels for first 
 		panel1.add(label1);
-		panel2.add(label2);
+		//panel2.add(label2);
 		panel3.add(label3);
 		panel4.add(label4);
 
