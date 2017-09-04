@@ -50,7 +50,7 @@ public class Universe extends JFrame
 		Assessor panel2 = new Assessor();//added by Javier
 		JPanel panel3 = new JPanel();
 		JPanel panel4 = new JPanel();
-		panel2.changeState(1);//added by Javier for testing
+		panel2.changeState(4);//added by Javier for testing
 		
 		//add name labels for first 
 		panel1.add(label1);

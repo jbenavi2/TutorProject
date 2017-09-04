@@ -27,8 +27,14 @@ public class Assessor extends JPanel{
 	private String[] optionsList = {"option1", "option2", "option3"};
 	private JComboBox<String> questionOneList;
 	
+	// checkboxes for Question2
+	private JCheckBox chkBoxOption1, chkBoxOption2, chkBoxOption3;
+	
 	// buttons for Question 3
-	private JButton option1, option2, option3;
+	private JButton buttonOption1, buttonOption2, buttonOption3;
+	
+	// textfield for Question 4
+	private JTextField textField;
 	
 	//default constructor
 	public Assessor() {
@@ -67,8 +73,6 @@ public class Assessor extends JPanel{
 		}
 		
 		else if(state == 1) {
-			//options that will be inside combo box
-			//String[] optionsList = { "option1", "option2", "option3" };
 			
 			//create my label
 			labelQuestion1 =  new JLabel("Question 1");
@@ -76,6 +80,7 @@ public class Assessor extends JPanel{
 			
 			//create the combo box
 			questionOneList = new JComboBox<String>(optionsList);
+			questionOneList.setEditable(false);
 			questionOneList.setAlignmentX(Component.CENTER_ALIGNMENT);
 			
 			//create my panel for when in state 1
@@ -84,8 +89,36 @@ public class Assessor extends JPanel{
 			panelQuestion1.add(labelQuestion1);
 			panelQuestion1.add(questionOneList);
 			
-			setLayout(new BorderLayout());
+			//setLayout(new BorderLayout());
 			add(panelQuestion1);
+			
+			
+		}
+		
+		else if(state == 2) {
+			//create my label
+			labelQuestion2 = new JLabel("Question 2");
+			labelQuestion2.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+			//create my 3 checkboxes
+			chkBoxOption1 = new JCheckBox("Option 1");
+			chkBoxOption1.setAlignmentX(Component.CENTER_ALIGNMENT);
+			chkBoxOption2 = new JCheckBox("Option 2");
+			chkBoxOption2.setAlignmentX(Component.CENTER_ALIGNMENT);
+			chkBoxOption3 = new JCheckBox("Option 3");
+			chkBoxOption3.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+			//create my panel for when in state 2
+			panelQuestion2 = new JPanel();
+			panelQuestion2.setLayout(new BoxLayout(panelQuestion2, BoxLayout.Y_AXIS));
+			panelQuestion2.add(labelQuestion2);
+			panelQuestion2.add(chkBoxOption1);
+			panelQuestion2.add(chkBoxOption2);
+			panelQuestion2.add(chkBoxOption3);
+			
+			//setLayout(new BorderLayout());
+			add(panelQuestion2);
+			
 			
 			
 		}
@@ -96,24 +129,44 @@ public class Assessor extends JPanel{
 			labelQuestion3.setAlignmentX(Component.CENTER_ALIGNMENT);
 			
 			//create my 3 option buttons
-			option1 = new JButton("option 1");
-			option1.setAlignmentX(Component.CENTER_ALIGNMENT);
-			option2 = new JButton("option 2");
-			option2.setAlignmentX(Component.CENTER_ALIGNMENT);
-			option3 = new JButton("option 3");
-			option3.setAlignmentX(Component.CENTER_ALIGNMENT);
+			buttonOption1 = new JButton("option 1");
+			buttonOption1.setAlignmentX(Component.CENTER_ALIGNMENT);
+			buttonOption2 = new JButton("option 2");
+			buttonOption2.setAlignmentX(Component.CENTER_ALIGNMENT);
+			buttonOption3 = new JButton("option 3");
+			buttonOption3.setAlignmentX(Component.CENTER_ALIGNMENT);
 			
 			//create my panel for when in state 3
 			panelQuestion3 = new JPanel();
 			panelQuestion3.setLayout(new BoxLayout(panelQuestion3, BoxLayout.Y_AXIS));
 			panelQuestion3.add(labelQuestion3);
-			panelQuestion3.add(option1);
-			panelQuestion3.add(option2);
-			panelQuestion3.add(option3);
+			panelQuestion3.add(buttonOption1);
+			panelQuestion3.add(buttonOption2);
+			panelQuestion3.add(buttonOption3);
 			
-			setLayout(new BorderLayout());
+			//setLayout(new BorderLayout());
 			add(panelQuestion3);
-		}		
+		}
+		
+		else if(state == 4) {
+			//create my label
+			labelQuestion4 = new JLabel("Question 4");
+			labelQuestion4.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+			//create my textfield
+			textField = new JTextField();
+			textField.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+			//create my panel for when in state 4
+			panelQuestion4 = new JPanel();
+			panelQuestion4.setLayout(new BoxLayout(panelQuestion4, BoxLayout.Y_AXIS));
+			panelQuestion4.add(labelQuestion4);
+			panelQuestion4.add(textField);
+			
+			add(panelQuestion4);			
+			
+			
+		}
 		
 	}	
 	
