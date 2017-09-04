@@ -2,7 +2,6 @@ import javax.swing.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.*; //added by Javier
 
 
 public class Universe extends JFrame
@@ -46,7 +45,7 @@ public class Universe extends JFrame
 		
 		//!!temp. switch out for other class files.!!
 		JPanel panel1 = new JPanel();
-		//JPanel panel2 = new JPanel();
+		//JPanel panel2 = new JPanel();  //commented out by Javier for testing
 		Assessor panel2 = new Assessor();//added by Javier
 		JPanel panel3 = new JPanel();
 		JPanel panel4 = new JPanel();
@@ -54,7 +53,7 @@ public class Universe extends JFrame
 		
 		//add name labels for first 
 		panel1.add(label1);
-		//panel2.add(label2);
+		//panel2.add(label2); //commented out by Javier for testing
 		panel3.add(label3);
 		panel4.add(label4);
 
