@@ -68,7 +68,7 @@ public class Assessor extends JPanel{
 			panelDefault = new JPanel();
 			panelDefault.setLayout(new BoxLayout(panelDefault, BoxLayout.Y_AXIS));
 			panelDefault.add(myName);
-			setLayout(new BorderLayout());
+			//setLayout(new BorderLayout());
 			add(panelDefault);
 		}
 		
@@ -91,6 +91,8 @@ public class Assessor extends JPanel{
 			
 			//setLayout(new BorderLayout());
 			add(panelQuestion1);
+			
+			questionOneList.addActionListener(new ComboBoxListener());
 			
 			
 		}
@@ -119,6 +121,9 @@ public class Assessor extends JPanel{
 			//setLayout(new BorderLayout());
 			add(panelQuestion2);
 			
+			chkBoxOption1.addItemListener(new CheckBoxListener());
+			chkBoxOption2.addItemListener(new CheckBoxListener());
+			chkBoxOption3.addItemListener(new CheckBoxListener());
 			
 			
 		}
@@ -146,6 +151,11 @@ public class Assessor extends JPanel{
 			
 			//setLayout(new BorderLayout());
 			add(panelQuestion3);
+			
+			buttonOption1.addActionListener(new ButtonListener());
+			buttonOption2.addActionListener(new ButtonListener());
+			buttonOption3.addActionListener(new ButtonListener());
+			
 		}
 		
 		else if(state == 4) {
@@ -165,9 +175,65 @@ public class Assessor extends JPanel{
 			
 			add(panelQuestion4);			
 			
+			textField.addActionListener(new TextFieldListener());
+		}
+		
+	}
+	
+	//TextFieldListener class listens for text is typed in the texfield
+	private class TextFieldListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent event) {
+			
+			String text = textField.getText();
+			JOptionPane.showMessageDialog(null, text);
+		}
+		
+	}//end TextFieldListener
+	
+	//CheckBoxListner class listens to which boxes are selected
+	private class CheckBoxListener implements ItemListener{
+		
+		public void itemStateChanged(ItemEvent event) {
+			
+			Object source = event.getItemSelectable();
+			
+			if(source == chkBoxOption1 || source == chkBoxOption2 || source == chkBoxOption3) {
+				JOptionPane.showMessageDialog(null, "hello world!");
+			}
+		}
+
+		
+	}//end CheckBoxListener
+	
+	//ButtonListener class listens to see if Option 1, 2, or 3 is pushed.
+	private class ButtonListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent event) {
+			
+			Object source = event.getSource();
+			
+			if(source == buttonOption1 || source == buttonOption2 || source == buttonOption3) {
+				JOptionPane.showMessageDialog(null, "hello world!");
+			}
+			
+		}
+	}//end ButtonListener
+	
+	//ComboBoxListener class listens to see which options are selected from the Combo box
+	private class ComboBoxListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent event) {
+			
+			JComboBox<String> source = (JComboBox<String>)event.getSource();
+			String option = (String)source.getSelectedItem();
+			
+			if(option == "option1" || option == "option2" || option == "option3") {
+				JOptionPane.showMessageDialog(null, "hello world!");
+			}
 			
 		}
 		
-	}	
+	}//end ComboBoxListener
 	
 }
