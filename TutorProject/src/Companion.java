@@ -2,6 +2,7 @@
 public class Companion extends JPanel {
 	
 	private JRadioButton A, B, C, D;
+	private ButtonGroup group;
 	
 	public Companion() {
 	
