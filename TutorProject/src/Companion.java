@@ -1,12 +1,11 @@
 /**
-* The panel will display one of the four options for different types of faces: 
+* The panel will display one of four options for different types of faces: 
 * happy, thinking, worried, and sorry.
 * Assignment number: Recitation Project 1
-* Completion time: 2 hours
+* Completion time: (estimation of hours spent on this program)
 *
-* @author Natalie DePaula, Eugene Ryzhikov (stackoverflow), 
-* MadProgrammer (stackoverflow)
-* @version 
+* @author Natalie DePaula, (the names of anyone whose code you use)
+* @version (version)
 */
 
 import java.awt.*;
@@ -78,12 +77,15 @@ public class Companion extends JPanel {
 			//create happy panel for when in state 1
 			//centers the contents of the panel horizontally
 			happy = new JPanel(new GridBagLayout());
-	        	GridBagConstraints happyLayout = new GridBagConstraints();
-	        	happyLayout.weightx = 1;
-	        	happyLayout.fill = GridBagConstraints.HORIZONTAL;
-	        	happyLayout.gridwidth = GridBagConstraints.REMAINDER;
+	        GridBagConstraints happyLayout = new GridBagConstraints();
+	        happyLayout.weightx = 1;
+	        happyLayout.fill = GridBagConstraints.HORIZONTAL;
+	        happyLayout.gridwidth = GridBagConstraints.REMAINDER;
+	        
+	        //sets background color to white to match jpeg background
+	        happy.setBackground(Color.white);
 			
-	        	happy.add(happyLabel);
+	        happy.add(happyLabel);
 			add(happy);
 			
 		}
@@ -99,12 +101,15 @@ public class Companion extends JPanel {
 			//create thinking panel for when in state 2
 			//centers the contents of the panel horizontally
 			thinking = new JPanel(new GridBagLayout());
-	        	GridBagConstraints thinkingLayout = new GridBagConstraints();
-	        	thinkingLayout.weightx = 1;
-	        	thinkingLayout.fill = GridBagConstraints.HORIZONTAL;
-	        	thinkingLayout.gridwidth = GridBagConstraints.REMAINDER;
+	        GridBagConstraints thinkingLayout = new GridBagConstraints();
+	        thinkingLayout.weightx = 1;
+	        thinkingLayout.fill = GridBagConstraints.HORIZONTAL;
+	        thinkingLayout.gridwidth = GridBagConstraints.REMAINDER;
 			
-	        	thinking.add(thinkingLabel);
+	        //sets background color to white to match jpeg background
+	        thinking.setBackground(Color.white);
+	        
+	        thinking.add(thinkingLabel);
 			add(thinking);
 			
 		}
@@ -120,12 +125,15 @@ public class Companion extends JPanel {
 			//create worried panel for when in state 4
 			//centers the contents of the panel horizontally
 			worried = new JPanel(new GridBagLayout());
-	        		GridBagConstraints worriedLayout = new GridBagConstraints();
-	        	worriedLayout.weightx = 1;
-	        	worriedLayout.fill = GridBagConstraints.HORIZONTAL;
-	        	worriedLayout.gridwidth = GridBagConstraints.REMAINDER;
+	        GridBagConstraints worriedLayout = new GridBagConstraints();
+	        worriedLayout.weightx = 1;
+	        worriedLayout.fill = GridBagConstraints.HORIZONTAL;
+	        worriedLayout.gridwidth = GridBagConstraints.REMAINDER;
+	        
+	        //sets background color to white to match jpeg background
+	        worried.setBackground(Color.white);
 			
-	        	worried.add(worriedLabel);
+	        worried.add(worriedLabel);
 			add(worried);
 			
 		}
@@ -141,12 +149,15 @@ public class Companion extends JPanel {
 			//create sorry panel for when in state 4
 			//centers the contents of the panel horizontally
 			sorry = new JPanel(new GridBagLayout());
-	        	GridBagConstraints sorryLayout = new GridBagConstraints();
-	        	sorryLayout.weightx = 1;
-	        	sorryLayout.fill = GridBagConstraints.HORIZONTAL;
-	        	sorryLayout.gridwidth = GridBagConstraints.REMAINDER;
+	        GridBagConstraints sorryLayout = new GridBagConstraints();
+	        sorryLayout.weightx = 1;
+	        sorryLayout.fill = GridBagConstraints.HORIZONTAL;
+	        sorryLayout.gridwidth = GridBagConstraints.REMAINDER;
+	        
+	        //sets background color to white to match jpeg background
+	        sorry.setBackground(Color.white);
 			
-	        	sorry.add(sorryLabel);
+	        sorry.add(sorryLabel);
 			add(sorry);
 		}
 		
