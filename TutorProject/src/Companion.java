@@ -1,4 +1,13 @@
-//Natalie DePaula
+/**
+* The panel will display one of four options for different types of faces: 
+* happy, thinking, worried, and sorry.
+* Assignment number: Recitation Project 1
+* Completion time: (estimation of hours spent on this program)
+*
+* @author Natalie DePaula, (the names of anyone whose code you use)
+* @version (version)
+*/
+
 public class Companion extends JPanel {
 	
 	private JRadioButton A, B, C, D;
@@ -17,5 +26,6 @@ public class Companion extends JPanel {
 		D = new JRadioButton ("D");
 		
 	}
+	
 	
 }
