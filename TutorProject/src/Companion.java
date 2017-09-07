@@ -2,10 +2,10 @@
 * The panel will display one of four options for different types of faces: 
 * happy, thinking, worried, and sorry.
 * Assignment number: Recitation Project 1
-* Completion time: (estimation of hours spent on this program)
+* Completion time: 1.5 hours
 *
-* @author Natalie DePaula, (the names of anyone whose code you use)
-* @version (version)
+* @author Natalie DePaula
+* @version 1.0
 */
 
 import java.awt.*;
