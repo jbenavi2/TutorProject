@@ -1,11 +1,12 @@
 /**
-* The panel will display one of four options for different types of faces: 
+* The panel will display one of the four options for different types of faces: 
 * happy, thinking, worried, and sorry.
 * Assignment number: Recitation Project 1
-* Completion time: (estimation of hours spent on this program)
+* Completion time: 2 hours
 *
-* @author Natalie DePaula, (the names of anyone whose code you use)
-* @version (version)
+* @author Natalie DePaula, Eugene Ryzhikov (stackoverflow), 
+* MadProgrammer (stackoverflow)
+* @version 
 */
 
 import java.awt.*;
@@ -36,8 +37,6 @@ public class Companion extends JPanel {
 	private ImageIcon thinkingImage;
 	private ImageIcon worriedImage;
 	private ImageIcon sorryImage;
-		
-	}
 	
 	public Companion() {
 		//create my label that only show my name
@@ -77,11 +76,14 @@ public class Companion extends JPanel {
 			happyLabel =  new JLabel("", happyImage, JLabel.CENTER);
 			
 			//create happy panel for when in state 1
-			happy = new JPanel();
-			happy.setLayout(new BoxLayout(happy, BoxLayout.Y_AXIS));
-			happy.add(happyLabel);
+			//centers the contents of the panel horizontally
+			happy = new JPanel(new GridBagLayout());
+	        	GridBagConstraints happyLayout = new GridBagConstraints();
+	        	happyLayout.weightx = 1;
+	        	happyLayout.fill = GridBagConstraints.HORIZONTAL;
+	        	happyLayout.gridwidth = GridBagConstraints.REMAINDER;
 			
-			//setLayout(new BorderLayout());
+	        	happy.add(happyLabel);
 			add(happy);
 			
 		}
@@ -95,11 +97,14 @@ public class Companion extends JPanel {
 			thinkingLabel =  new JLabel("", thinkingImage, JLabel.CENTER);
 			
 			//create thinking panel for when in state 2
-			thinking = new JPanel();
-			thinking.setLayout(new BoxLayout(thinking, BoxLayout.Y_AXIS));
-			thinking.add(thinkingLabel);
+			//centers the contents of the panel horizontally
+			thinking = new JPanel(new GridBagLayout());
+	        	GridBagConstraints thinkingLayout = new GridBagConstraints();
+	        	thinkingLayout.weightx = 1;
+	        	thinkingLayout.fill = GridBagConstraints.HORIZONTAL;
+	        	thinkingLayout.gridwidth = GridBagConstraints.REMAINDER;
 			
-			//setLayout(new BorderLayout());
+	        	thinking.add(thinkingLabel);
 			add(thinking);
 			
 		}
@@ -112,13 +117,15 @@ public class Companion extends JPanel {
 			//creates the worried label that holds the image
 			worriedLabel =  new JLabel("", worriedImage, JLabel.CENTER);
 			
-			//create worried panel for when in state 3
-			worried = new JPanel();
-			worried.setLayout(new BoxLayout(worried, BoxLayout.Y_AXIS));
-			worried.add(worriedLabel);
-			//add image to panel here
+			//create worried panel for when in state 4
+			//centers the contents of the panel horizontally
+			worried = new JPanel(new GridBagLayout());
+	        		GridBagConstraints worriedLayout = new GridBagConstraints();
+	        	worriedLayout.weightx = 1;
+	        	worriedLayout.fill = GridBagConstraints.HORIZONTAL;
+	        	worriedLayout.gridwidth = GridBagConstraints.REMAINDER;
 			
-			//setLayout(new BorderLayout());
+	        	worried.add(worriedLabel);
 			add(worried);
 			
 		}
@@ -132,12 +139,14 @@ public class Companion extends JPanel {
 			sorryLabel =  new JLabel("", sorryImage, JLabel.CENTER);
 			
 			//create sorry panel for when in state 4
-			sorry = new JPanel();
-			sorry.setLayout(new BoxLayout(sorry, BoxLayout.Y_AXIS));
-			sorry.add(sorryLabel);
-			//add image to panel here
+			//centers the contents of the panel horizontally
+			sorry = new JPanel(new GridBagLayout());
+	        	GridBagConstraints sorryLayout = new GridBagConstraints();
+	        	sorryLayout.weightx = 1;
+	        	sorryLayout.fill = GridBagConstraints.HORIZONTAL;
+	        	sorryLayout.gridwidth = GridBagConstraints.REMAINDER;
 			
-			//setLayout(new BorderLayout());
+	        	sorry.add(sorryLabel);
 			add(sorry);
 		}
 		
