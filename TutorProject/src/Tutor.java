@@ -43,43 +43,58 @@ public class Tutor extends JPanel {
    
     
 
- public Tutor () {
-     myName = new JLabel("Andrew Ton");
-     myName.setAlignmentX(Component.CENTER_ALIGNMENT);
-     
-     panelDefault = new JPanel();
-		panelDefault.setLayout(new BoxLayout(panelDefault, BoxLayout.Y_AXIS));
-		panelDefault.add(myName);
-		setLayout(new BorderLayout());
-		add(panelDefault);
- }
+	 public Tutor () {
+		 
+		 myName = new JLabel("Andrew Ton");
+		 myName.setAlignmentX(Component.CENTER_ALIGNMENT);
+	     
+		 panelDefault = new JPanel();
+		 panelDefault.setLayout(new BoxLayout(panelDefault, BoxLayout.Y_AXIS));
+		 panelDefault.add(myName);
+		 setLayout(new BorderLayout());
+		 add(panelDefault);
+	 }
   
   
-  public void changeState (int state) {
+	 public void changeState (int state) {
   
-      if (state == 0) {
-          myName = new JLabel("Andrew Ton");
-	  myName.setAlignmentX(Component.CENTER_ALIGNMENT);
-         panelDefault = new JPanel();
-		panelDefault.setLayout(new BoxLayout(panelDefault, BoxLayout.Y_AXIS));
-		panelDefault.add(myName);
-		setLayout(new BorderLayout());
-		add(panelDefault);
-      }
-      else if (state == 1) {
-         try {
-    String url = "File:///Users/AndrewTon/NetBeansProjects/Tutor/src/Resources/sample" + state + ".html";
-    JEditorPane editorPane = new JEditorPane(url);
-     JFrame frame = new JFrame();
-    frame.getContentPane().add(editorPane, BorderLayout.CENTER);
-    frame.setSize(250, 250);
-    frame.setVisible(true);
-      }
-      catch (Exception e) {
-          System.out.println(e);
-      }
-         
-      }
+		 if (state == 0) {			 
+    	  
+	          myName = new JLabel("Andrew Ton");
+	          myName.setAlignmentX(Component.CENTER_ALIGNMENT);
+	          panelDefault = new JPanel();
+	          panelDefault.setLayout(new BoxLayout(panelDefault, BoxLayout.Y_AXIS));
+	          panelDefault.add(myName);
+	          setLayout(new BorderLayout());
+	          add(panelDefault);
+		 }
+      
+	     else if (state == 1) {
+	    	 
+	         try {
+	        	 
+	        	 java.net.URL sample1 = Tutor.class.getResource("/sample1.html");
+	        	 JEditorPane editorPane = new JEditorPane();
+	        	 editorPane.setPage(sample1);
+	        	 add(editorPane);
+	        	 	        	 
+//	        	 String url = "src/sample" + state + ".html";
+//	        	 System.out.println(url);
+//	        	 JEditorPane editorPane = new JEditorPane(url);
+//	        	 JFrame frame = new JFrame();
+//	        	 frame.getContentPane().add(editorPane, BorderLayout.CENTER);
+//	        	 frame.setSize(250, 250);
+//	        	 frame.setVisible(true);
+	         }
+	         
+	         catch (Exception e) {
+	        	 System.out.println(e);
+	         }
+	         
+	      }
+		 
+		 
+		 
       else if (state == 2) {
            try {
     String url = "File:///Users/AndrewTon/NetBeansProjects/Tutor/src/Resources/sample" + state + ".html";
