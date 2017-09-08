@@ -91,7 +91,7 @@ public class Companion extends JPanel {
 		else if(state == 2) {
 			
 			//Creates the thinking image
-			ImageIcon thinkingImage = new ImageIcon("src/thinking.jpg");
+			thinkingImage = new ImageIcon("src/thinking.jpg");
 			
 			//creates the thinking label that holds the image
 			thinkingLabel =  new JLabel("", thinkingImage, JLabel.CENTER);
