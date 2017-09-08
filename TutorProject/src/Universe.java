@@ -45,14 +45,15 @@ public class Universe extends JFrame
 		
 		
 		//!!temp. switch out for other class files.!!
-		JPanel panel1 = new JPanel();
+		//JPanel panel1 = new JPanel();
+		Companion panel1 = new Companion();
 		Assessor panel2 = new Assessor();//added by Javier
 		JPanel panel3 = new JPanel();
 		JPanel panel4 = new JPanel();
 		panel2.changeState(0);//added by Javier for testing
 		
 		//add name labels for first 
-		panel1.add(label1);
+		//panel1.add(label1);
 		panel3.add(label3);
 		panel4.add(label4);
 
@@ -97,10 +98,13 @@ public class Universe extends JFrame
 					content.add(slider, BorderLayout.SOUTH);
 					
 					//create new panels - waiting for other class files
+					Companion panel1 = new Companion();
 					Assessor panel2 = new Assessor();
 					
 					//set state - waiting for other class files
+					panel1.changeState(value);
 					panel2.changeState(value);
+					
 					
 					//rea-dd to panelGrid
 					panelGrid.add(panel1);

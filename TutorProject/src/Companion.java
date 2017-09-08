@@ -70,23 +70,20 @@ public class Companion extends JPanel {
 		else if(state == 1) {
 			
 			//Creates the happy image
-			ImageIcon happyImage = new ImageIcon("happy.jpg");
+			happyImage = new ImageIcon("src/happy.jpg");
 			
 			//creates the happy label that holds the image
-			happyLabel =  new JLabel("", happyImage, JLabel.CENTER);
+			happyLabel =  new JLabel("Happy", happyImage, JLabel.CENTER);
 			
 			//create happy panel for when in state 1
 			//centers the contents of the panel horizontally
-			happy = new JPanel(new GridBagLayout());
-	        	GridBagConstraints happyLayout = new GridBagConstraints();
-	        	happyLayout.weightx = 1;
-	        	happyLayout.fill = GridBagConstraints.HORIZONTAL;
-	        	happyLayout.gridwidth = GridBagConstraints.REMAINDER;
+			happy = new JPanel();
+	        happy.setLayout(new BoxLayout(happy, BoxLayout.Y_AXIS));
 	        
 	        	//sets background color to white to match jpeg background
-	        	happy.setBackground(Color.white);
+	        	//happy.setBackground(Color.white);
 			
-	       		happy.add(happyLabel);
+	       	happy.add(happyLabel);
 			add(happy);
 			
 		}
@@ -94,7 +91,7 @@ public class Companion extends JPanel {
 		else if(state == 2) {
 			
 			//Creates the thinking image
-			ImageIcon thinkingImage = new ImageIcon("thinking.jpg");
+			ImageIcon thinkingImage = new ImageIcon("src/thinking.jpg");
 			
 			//creates the thinking label that holds the image
 			thinkingLabel =  new JLabel("", thinkingImage, JLabel.CENTER);
@@ -118,7 +115,7 @@ public class Companion extends JPanel {
 		else if(state == 3) {
 			
 			//Creates the worried image
-			ImageIcon worriedImage = new ImageIcon("worried.jpg");
+			ImageIcon worriedImage = new ImageIcon("src/worried.jpg");
 			
 			//creates the worried label that holds the image
 			worriedLabel =  new JLabel("", worriedImage, JLabel.CENTER);
@@ -142,7 +139,7 @@ public class Companion extends JPanel {
 		else if(state == 4) {
 			
 			//Creates the sorry image
-			ImageIcon sorryImage = new ImageIcon("sorry.jpg");
+			ImageIcon sorryImage = new ImageIcon("src/sorry.jpg");
 			
 			//creates the sorry label that holds the image
 			sorryLabel =  new JLabel("", sorryImage, JLabel.CENTER);
