@@ -1,3 +1,16 @@
+/**
+* 4 question will be displayed.  One on each panel
+* with different option styles for selecting answers.
+* Those option styles include using a menu, checkboxes,
+* buttons, and a textfield.
+* Recitation Project 1
+* Completion time: 4 hours
+*
+* @author Javier Benavides
+* @version 1.0
+*/
+
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
