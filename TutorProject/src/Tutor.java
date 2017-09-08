@@ -69,23 +69,14 @@ public class Tutor extends JPanel {
 	          add(panelDefault);
 		 }
       
-	     else if (state == 1) {
-	    	 
-	         try {
+	     	else if (state == 1) {
+	   	try {
 	        	 
 	        	 java.net.URL sample1 = Tutor.class.getResource("/sample1.html");
 	        	 JEditorPane editorPane = new JEditorPane();
 	        	 editorPane.setPage(sample1);
 	        	 add(editorPane);
-	        	 	        	 
-//	        	 String url = "src/sample" + state + ".html";
-//	        	 System.out.println(url);
-//	        	 JEditorPane editorPane = new JEditorPane(url);
-//	        	 JFrame frame = new JFrame();
-//	        	 frame.getContentPane().add(editorPane, BorderLayout.CENTER);
-//	        	 frame.setSize(250, 250);
-//	        	 frame.setVisible(true);
-	         }
+			}
 	         
 	         catch (Exception e) {
 	        	 System.out.println(e);
@@ -95,47 +86,51 @@ public class Tutor extends JPanel {
 		 
 		 
 		 
-      else if (state == 2) {
-           try {
-    String url = "File:///Users/AndrewTon/NetBeansProjects/Tutor/src/Resources/sample" + state + ".html";
-    JEditorPane editorPane = new JEditorPane(url);
-     JFrame frame = new JFrame();
-    frame.getContentPane().add(editorPane, BorderLayout.CENTER);
-    frame.setSize(250, 250);
-    frame.setVisible(true);
-      }
-      catch (Exception e) {
-          System.out.println(e);
-      }
-      }
-      else if (state == 3) {
-           try {
-    String url = "File:///Users/AndrewTon/NetBeansProjects/Tutor/src/Resources/sample" + state + ".html";
-    JEditorPane editorPane = new JEditorPane(url);
-     JFrame frame = new JFrame();
-    frame.getContentPane().add(editorPane, BorderLayout.CENTER);
-    frame.setSize(250, 250);
-    frame.setVisible(true);
-      }
-      catch (Exception e) {
-          System.out.println(e);
-      }
-      }
-      else if (state == 4) {
-          try {
-    String url = "File:///Users/AndrewTon/NetBeansProjects/Tutor/src/Resources/sample" + state + ".html";
-    JEditorPane editorPane = new JEditorPane(url);
-     JFrame frame = new JFrame();
-    frame.getContentPane().add(editorPane, BorderLayout.CENTER);
-    frame.setSize(250, 250);
-    frame.setVisible(true);
-      }
-      catch (Exception e) {
-          System.out.println(e);
-      }
-      }
-      
-  } 
+      		else if (state == 2) {
+           	try {
+	        	 
+	        	 java.net.URL sample1 = Tutor.class.getResource("/sample2.html");
+	        	 JEditorPane editorPane = new JEditorPane();
+	        	 editorPane.setPage(sample2);
+	        	 add(editorPane);	
+	         	}
+	         
+	         catch (Exception e) {
+	        	 System.out.println(e);
+	         }
+	         
+	      }      
+
+
+		else if (state == 3) {
+           	try {
+	        	 
+	        	 java.net.URL sample1 = Tutor.class.getResource("/sample3.html");
+	        	 JEditorPane editorPane = new JEditorPane();
+	        	 editorPane.setPage(sample1);
+	        	 add(editorPane); 	        	 
+	         }
+	         
+	         catch (Exception e) {
+	        	 System.out.println(e);
+	         }
+	         
+	      }           
+
+		else if (state == 4) {
+         	try {
+	        	 
+	        	 java.net.URL sample1 = Tutor.class.getResource("/sample4.html");
+	        	 JEditorPane editorPane = new JEditorPane();
+	        	 editorPane.setPage(sample4);
+	        	 add(editorPane);
+	         }
+	         
+	         catch (Exception e) {
+	        	 System.out.println(e);
+	         }
+	         
+	      }     
 
   
 }
