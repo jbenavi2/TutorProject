@@ -115,7 +115,7 @@ public class Companion extends JPanel {
 		else if(state == 3) {
 			
 			//Creates the worried image
-			ImageIcon worriedImage = new ImageIcon("src/worried.jpg");
+			worriedImage = new ImageIcon("src/worried.jpg");
 			
 			//creates the worried label that holds the image
 			worriedLabel =  new JLabel("", worriedImage, JLabel.CENTER);
@@ -139,7 +139,7 @@ public class Companion extends JPanel {
 		else if(state == 4) {
 			
 			//Creates the sorry image
-			ImageIcon sorryImage = new ImageIcon("src/sorry.jpg");
+			sorryImage = new ImageIcon("src/sorry.jpg");
 			
 			//creates the sorry label that holds the image
 			sorryLabel =  new JLabel("", sorryImage, JLabel.CENTER);

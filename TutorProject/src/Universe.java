@@ -87,7 +87,7 @@ public class Universe extends JFrame
 				if (!slider.getValueIsAdjusting() ) {
 					//debug
 					int value = slider.getValue();
-					System.out.println(value);
+//					System.out.println(value);  //commented out by Javier
 					
 					//remove old content
 					content.removeAll();
