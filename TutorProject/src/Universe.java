@@ -1,38 +1,29 @@
+/**
+* Description:
+* 	Creates a Jframe that holds panels created by the the assessor, companion and tutor classes.
+* 	Includes a slider used to change content within the panels, depending on the position.
+* Assignment number:
+* 	Recitation Project 1
+* Completion time:
+* 	2 Hours
+*
+* @author Andrew Bui
+* @version 1
+*/
+
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 
-
 public class Universe extends JFrame
 {
 	
 	public static void main(String[] args) 
 	{
-		//Labels Containing Names of Team Members
-		JLabel label1 = new JLabel("Natalie DePaula", SwingConstants.CENTER);
-		JLabel label2 = new JLabel("Javier Benavides", SwingConstants.CENTER);
-		JLabel label3 = new JLabel("Andrew Ton", SwingConstants.CENTER);
-		JLabel label4 = new JLabel("Andrew Bui", SwingConstants.CENTER);
-		//Format Content
-		//dark grey background, blue text, centered text
-		label1.setBorder(new LineBorder(Color.BLACK));
-		label1.setForeground(Color.BLUE);
-		label1.setBackground(Color.lightGray);
-		label1.setOpaque(true);
-		label2.setBorder(new LineBorder(Color.BLACK));
-		label2.setForeground(Color.BLUE);
-		label2.setBackground(Color.lightGray);
-		label2.setOpaque(true);
-		label3.setBorder(new LineBorder(Color.BLACK));
-		label3.setForeground(Color.BLUE);
-		label3.setBackground(Color.lightGray);
-		label3.setOpaque(true);
-		label4.setBorder(new LineBorder(Color.BLACK));
-		label4.setForeground(Color.BLUE);
-		label4.setBackground(Color.lightGray);
-		label4.setOpaque(true);
+		//Label Containing Name
+		JLabel nameLabel = new JLabel("Andrew Bui", SwingConstants.CENTER);
 		
 		//create Slider
 		int minSlider = 0;
@@ -43,27 +34,25 @@ public class Universe extends JFrame
 		slider.setPaintTicks(true);
 		slider.setPaintLabels(true);
 		
-		
-		//!!temp. switch out for other class files.!!
-		//JPanel panel1 = new JPanel();
+		//Create panels for initial state
 		Companion panel1 = new Companion();
-		Assessor panel2 = new Assessor();//added by Javier
+		Assessor panel2 = new Assessor();
 		Tutor panel3 = new Tutor();
 		JPanel panel4 = new JPanel();
+		//blank panel to keep bevel consistent
+		JPanel panel5 = new JPanel();
 		
-		//add name labels for first 
-		//panel1.add(label1);
-		//panel3.add(label3);
-		panel4.add(label4);
+		//add name label to panel 
+		panel4.add(nameLabel);
 
-		
 		//Bevel for Panels
 		Border raisedBevel = BorderFactory.createLoweredBevelBorder();
 		panel1.setBorder(raisedBevel);
 		panel2.setBorder(raisedBevel);
 		panel3.setBorder(raisedBevel);
 		panel4.setBorder(raisedBevel);
-
+		panel5.setBorder(raisedBevel);
+		
 		//Grid Layout to hold Jpanels
 		JPanel panelGrid = new JPanel();
 		panelGrid.setLayout(new GridLayout(2,2));
@@ -72,21 +61,22 @@ public class Universe extends JFrame
 		panelGrid.add(panel3);
 		panelGrid.add(panel4);		
 		
-		JFrame frame = new JFrame("Application2");
+		//Create JFrame to hold content and add close operation
+		JFrame frame = new JFrame("Recitation Project 1");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		//Create grid to hold panels and slider to change states
 		Container content = frame.getContentPane();
 		content.setLayout(new BorderLayout());
 		content.add(panelGrid, BorderLayout.CENTER);
 		content.add(slider, BorderLayout.SOUTH);
 		
+		//slider listener to update the content of panels
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged (ChangeEvent e) {
 				JSlider slider = (JSlider) e.getSource();
 				if (!slider.getValueIsAdjusting() ) {
-					//debug
 					int value = slider.getValue();
-//					System.out.println(value);  //commented out by Javier
 					
 					//remove old content
 					content.removeAll();
@@ -106,15 +96,23 @@ public class Universe extends JFrame
 					panel2.changeState(value);
 					panel3.changeState(value);
 					
+					//bevels
+					panel1.setBorder(raisedBevel);
+					panel2.setBorder(raisedBevel);
+					panel3.setBorder(raisedBevel);
 					
-					//rea-dd to panelGrid
+					//re-add to panelGrid
 					panelGrid.add(panel1);
 					panelGrid.add(panel2);
 					panelGrid.add(panel3);
-					panelGrid.add(panel4);
 					
-					//bevels
-					panel2.setBorder(raisedBevel);
+					//if slider is moved back to 0, add panel4 (name)
+					if (value == 0) {
+						panelGrid.add(panel4);
+					}
+					else {
+						panelGrid.add(panel5);
+					}
 					
 					//add grid to content
 					content.add(panelGrid, BorderLayout.CENTER);
@@ -125,9 +123,7 @@ public class Universe extends JFrame
 				}
 			}
 		});
-				
 		frame.setSize(1280,720);
 		frame.setVisible(true);
 	  }
-	
 }
