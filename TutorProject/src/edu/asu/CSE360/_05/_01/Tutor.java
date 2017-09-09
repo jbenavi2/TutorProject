@@ -1,13 +1,14 @@
 package edu.asu.CSE360._05._01;
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * This panel will load one of four different HTML files
+ * Assignment number: Recitation Project 1
+* Completion time: 3.0 hours
  */
 
 /**
  *
  * @author AndrewTon
+ * @version 1.0
  */
 import static java.awt.AWTEventMulticaster.add;
 import java.awt.BorderLayout;
@@ -26,19 +27,11 @@ import javax.swing.*;
 
 public class Tutor extends JPanel {
 
-// The panels for questions
+// The panels for initial loading
 	private JPanel panelDefault;
-	private JPanel panel1;
-	private JPanel panel2;
-	private JPanel panel3;
-	private JPanel panel4;
 	
-	// The title labels for each panel
+	// The title labels for my name
 	private JLabel myName;
-	private JLabel label1;
-	private JLabel label2;
-	private JLabel label3;
-	private JLabel label4;
   
     
    
@@ -74,7 +67,6 @@ public class Tutor extends JPanel {
 	   	try {
 	        	 
 	        	 java.net.URL sample1 = Tutor.class.getResource("/sample1.html");
-	        	 System.out.println(sample1);
 	        	 JEditorPane editorPane = new JEditorPane();
 	        	 editorPane.setPage(sample1);
 	        	 add(editorPane);

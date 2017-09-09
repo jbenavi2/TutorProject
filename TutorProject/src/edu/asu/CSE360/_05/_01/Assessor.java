@@ -1,6 +1,6 @@
 package edu.asu.CSE360._05._01;
 /**
-* 4 question will be displayed.  One on each panel
+* 4 question will be displayed.  One on each slider
 * with different option styles for selecting answers.
 * Those option styles include using a menu, checkboxes,
 * buttons, and a textfield.
