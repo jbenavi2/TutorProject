@@ -129,6 +129,3 @@ public class Tutor extends JPanel {
 
   
 }
-//"File:///Users/AndrewTon/NetBeansProjects/main/src/Resources/sample"
-//"File:///Users/AndrewTon/NetBeansProjects/main/src/Resources/sample" + state + ".html"
-//"File:///Users/AndrewTon/NetBeansProjects/main/src/Resources/sample" + state + ".html";
