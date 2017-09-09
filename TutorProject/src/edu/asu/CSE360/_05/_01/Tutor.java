@@ -74,6 +74,7 @@ public class Tutor extends JPanel {
 	   	try {
 	        	 
 	        	 java.net.URL sample1 = Tutor.class.getResource("/sample1.html");
+	        	 System.out.println(sample1);
 	        	 JEditorPane editorPane = new JEditorPane();
 	        	 editorPane.setPage(sample1);
 	        	 add(editorPane);

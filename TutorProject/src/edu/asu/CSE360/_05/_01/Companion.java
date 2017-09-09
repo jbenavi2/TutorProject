@@ -71,7 +71,7 @@ public class Companion extends JPanel {
 		else if(state == 1) {
 			
 			//Creates the happy image
-			happyImage = new ImageIcon("src/happy.jpg");
+			happyImage = new ImageIcon("resources/happy.jpg");
 			
 			//creates the happy label that holds the image
 			happyLabel =  new JLabel("", happyImage, JLabel.CENTER);
@@ -95,7 +95,7 @@ public class Companion extends JPanel {
 		else if(state == 2) {
 			
 			//Creates the thinking image
-			thinkingImage = new ImageIcon("src/thinking.jpg");
+			thinkingImage = new ImageIcon("resources/thinking.jpg");
 			
 			//creates the thinking label that holds the image
 			thinkingLabel =  new JLabel("", thinkingImage, JLabel.CENTER);
@@ -119,7 +119,7 @@ public class Companion extends JPanel {
 		else if(state == 3) {
 			
 			//Creates the worried image
-			worriedImage = new ImageIcon("src/worried.jpg");
+			worriedImage = new ImageIcon("resources/worried.jpg");
 			
 			//creates the worried label that holds the image
 			worriedLabel =  new JLabel("", worriedImage, JLabel.CENTER);
@@ -143,7 +143,7 @@ public class Companion extends JPanel {
 		else if(state == 4) {
 			
 			//Creates the sorry image
-			sorryImage = new ImageIcon("src/sorry.jpg");
+			sorryImage = new ImageIcon("resources/sorry.jpg");
 			
 			//creates the sorry label that holds the image
 			sorryLabel =  new JLabel("", sorryImage, JLabel.CENTER);
