@@ -53,7 +53,7 @@ public class Tutor extends JPanel {
 		 panelDefault.add(myName);
 		 setLayout(new BorderLayout());
 		 add(panelDefault);
-	 }
+	 }//end Tutor
   
   
 	 public void changeState (int state) {
@@ -89,7 +89,7 @@ public class Tutor extends JPanel {
       		else if (state == 2) {
            	try {
 	        	 
-	        	 java.net.URL sample1 = Tutor.class.getResource("/sample2.html");
+	        	 java.net.URL sample2 = Tutor.class.getResource("/sample2.html");
 	        	 JEditorPane editorPane = new JEditorPane();
 	        	 editorPane.setPage(sample2);
 	        	 add(editorPane);	
@@ -105,9 +105,9 @@ public class Tutor extends JPanel {
 		else if (state == 3) {
            	try {
 	        	 
-	        	 java.net.URL sample1 = Tutor.class.getResource("/sample3.html");
+	        	 java.net.URL sample3 = Tutor.class.getResource("/sample3.html");
 	        	 JEditorPane editorPane = new JEditorPane();
-	        	 editorPane.setPage(sample1);
+	        	 editorPane.setPage(sample3);
 	        	 add(editorPane); 	        	 
 	         }
 	         
@@ -120,7 +120,7 @@ public class Tutor extends JPanel {
 		else if (state == 4) {
          	try {
 	        	 
-	        	 java.net.URL sample1 = Tutor.class.getResource("/sample4.html");
+	        	 java.net.URL sample4 = Tutor.class.getResource("/sample4.html");
 	        	 JEditorPane editorPane = new JEditorPane();
 	        	 editorPane.setPage(sample4);
 	        	 add(editorPane);
@@ -130,7 +130,8 @@ public class Tutor extends JPanel {
 	        	 System.out.println(e);
 	         }
 	         
-	      }     
+	      }
+	 }
 
   
 }
