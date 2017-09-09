@@ -13,6 +13,8 @@
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.concurrent.TimeUnit;
+
 import javax.swing.*;
 
 
@@ -134,9 +136,9 @@ public class Assessor extends JPanel{
 			//setLayout(new BorderLayout());
 			add(panelQuestion2);
 			
-			chkBoxOption1.addItemListener(new CheckBoxListener());
-			chkBoxOption2.addItemListener(new CheckBoxListener());
-			chkBoxOption3.addItemListener(new CheckBoxListener());
+			chkBoxOption1.addActionListener(new CheckBoxListener());
+			chkBoxOption2.addActionListener(new CheckBoxListener());
+			chkBoxOption3.addActionListener(new CheckBoxListener());
 			
 			
 		}
@@ -205,15 +207,15 @@ public class Assessor extends JPanel{
 	}//end TextFieldListener
 	
 	//CheckBoxListner class listens to which boxes are selected
-	private class CheckBoxListener implements ItemListener{
+	private class CheckBoxListener implements ActionListener{
 		
-		public void itemStateChanged(ItemEvent event) {
+		public void actionPerformed(ActionEvent event) {
 			
-			Object source = event.getItemSelectable();
-			
+			Object source = event.getSource();
 			if(source == chkBoxOption1 || source == chkBoxOption2 || source == chkBoxOption3) {
 				JOptionPane.showMessageDialog(null, "hello world!");
 			}
+			
 		}
 
 		
