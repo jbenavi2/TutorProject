@@ -14,12 +14,10 @@
 import javax.swing.*;
 import javax.swing.event.*;
 import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class Universe extends JFrame
 {
-	
 	public static void main(String[] args) 
 	{
 		//Label Containing Name
