@@ -1,3 +1,4 @@
+package edu.asu.CSE360._05._01;
 /**
 * The panel will display one of four options for different types of faces: 
 * happy, thinking, worried, and sorry.
