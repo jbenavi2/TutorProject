@@ -1,12 +1,12 @@
 package edu.asu.CSE360._05._01;
 /**
-* The panel will display one of four options for different types of faces: 
+* The panel will display one of four GIF options for different types of faces: 
 * happy, thinking, worried, and sorry.
-* Assignment number: Recitation Project 1
-* Completion time: 1.5 hours
+* Assignment number: Recitation Project 2
+* Completion time: .5 hours
 *
 * @author Natalie DePaula
-* @version 1.0
+* @version 2.0
 */
 
 import java.awt.*;
@@ -33,10 +33,10 @@ public class Companion extends JPanel {
 	private JLabel sorryLabel;
 	
 	// The pictures for each label in each panel
-	private ImageIcon happyImage;
-	private ImageIcon thinkingImage;
-	private ImageIcon worriedImage;
-	private ImageIcon sorryImage;
+	private ImageIcon happyGIF;
+	private ImageIcon thinkingGIF;
+	private ImageIcon worriedGIF;
+	private ImageIcon sorryGIF;
 	
 	public Companion() {
 		
@@ -70,11 +70,11 @@ public class Companion extends JPanel {
 		
 		else if(state == 1) {
 			
-			//Creates the happy image
-			happyImage = new ImageIcon("resources/happy.jpg");
+			//Creates the happy GIF
+			happyGIF = new ImageIcon("resources/happy.gif");
 			
-			//creates the happy label that holds the image
-			happyLabel =  new JLabel("", happyImage, JLabel.CENTER);
+			//creates the happy label that holds the GIF
+			happyLabel =  new JLabel("", happyGIF, JLabel.CENTER);
 			
 			//create happy panel for when in state 1
 			//centers the contents of the panel horizontally
@@ -84,7 +84,7 @@ public class Companion extends JPanel {
 			happyLayout.fill = GridBagConstraints.HORIZONTAL;
 			happyLayout.gridwidth = GridBagConstraints.REMAINDER;
 	        
-        	//sets background color to white to match jpeg background
+        	//sets background color to white
         	happy.setBackground(Color.white);
 			
 	       	happy.add(happyLabel);
@@ -94,11 +94,11 @@ public class Companion extends JPanel {
 		
 		else if(state == 2) {
 			
-			//Creates the thinking image
-			thinkingImage = new ImageIcon("resources/thinking.jpg");
+			//Creates the thinking GIF
+			thinkingGIF = new ImageIcon("resources/thinking.gif");
 			
-			//creates the thinking label that holds the image
-			thinkingLabel =  new JLabel("", thinkingImage, JLabel.CENTER);
+			//creates the thinking label that holds the GIF
+			thinkingLabel =  new JLabel("", thinkingGIF, JLabel.CENTER);
 			
 			//create thinking panel for when in state 2
 			//centers the contents of the panel horizontally
@@ -108,7 +108,7 @@ public class Companion extends JPanel {
         	thinkingLayout.fill = GridBagConstraints.HORIZONTAL;
         	thinkingLayout.gridwidth = GridBagConstraints.REMAINDER;
 			
-        	//sets background color to white to match jpeg background
+        	//sets background color to white
         	thinking.setBackground(Color.white);
         
         	thinking.add(thinkingLabel);
@@ -118,11 +118,11 @@ public class Companion extends JPanel {
 		
 		else if(state == 3) {
 			
-			//Creates the worried image
-			worriedImage = new ImageIcon("resources/worried.jpg");
+			//Creates the worried GIF
+			worriedGIF = new ImageIcon("resources/worried.gif");
 			
-			//creates the worried label that holds the image
-			worriedLabel =  new JLabel("", worriedImage, JLabel.CENTER);
+			//creates the worried label that holds the GIF
+			worriedLabel =  new JLabel("", worriedGIF, JLabel.CENTER);
 			
 			//create worried panel for when in state 4
 			//centers the contents of the panel horizontally
@@ -132,7 +132,7 @@ public class Companion extends JPanel {
         	worriedLayout.fill = GridBagConstraints.HORIZONTAL;
         	worriedLayout.gridwidth = GridBagConstraints.REMAINDER;
 	        
-        	//sets background color to white to match jpeg background
+        	//sets background color to white
         	worried.setBackground(Color.white);
 		
         	worried.add(worriedLabel);
@@ -142,11 +142,11 @@ public class Companion extends JPanel {
 		
 		else if(state == 4) {
 			
-			//Creates the sorry image
-			sorryImage = new ImageIcon("resources/sorry.jpg");
+			//Creates the sorry GIF
+			sorryGIF = new ImageIcon("resources/sorry.gif");
 			
-			//creates the sorry label that holds the image
-			sorryLabel =  new JLabel("", sorryImage, JLabel.CENTER);
+			//creates the sorry label that holds the GIF
+			sorryLabel =  new JLabel("", sorryGIF, JLabel.CENTER);
 			
 			//create sorry panel for when in state 4
 			//centers the contents of the panel horizontally
@@ -156,7 +156,7 @@ public class Companion extends JPanel {
         	sorryLayout.fill = GridBagConstraints.HORIZONTAL;
         	sorryLayout.gridwidth = GridBagConstraints.REMAINDER;
 	        
-        	//sets background color to white to match jpeg background
+        	//sets background color to white
         	sorry.setBackground(Color.white);
 		
         	sorry.add(sorryLabel);
