@@ -47,9 +47,12 @@ public class Assessor extends JPanel{
 	private JLabel labelQuestion3;
 	private JLabel labelQuestion4;
 	
-	// Combo box with options for Question 1
+	// Combo box with answer options for Question 1
 	private String[] optionsList = {"with water", "smother with baking soda", "blow on it"};
 	private JComboBox<String> questionOneList;
+	
+	//Jradio buttons for answer options
+	private JRadioButton RBoption1, RBoption2, RBoption3;
 	
 	// checkboxes for Question2
 	private JCheckBox chkBoxOption1, chkBoxOption2, chkBoxOption3;
@@ -136,23 +139,35 @@ public class Assessor extends JPanel{
 			labelQuestion1.setAlignmentX(Component.CENTER_ALIGNMENT);
 			
 			//generate the first question
-			JTextArea practiceQuestion_1 = new JTextArea(
+			JLabel practiceQuestion_1 = new JLabel(
 					"How do you put out a grease fire?");
-			practiceQuestion_1.setEditable(false);
-			practiceQuestion_1.setLineWrap(true);
 			
-			//create the combo box with answer options
-			questionOneList = new JComboBox<String>(optionsList);
-			questionOneList.setEditable(false);
-			questionOneList.setAlignmentX(Component.CENTER_ALIGNMENT);
+			//practiceQuestion_1.setEditable(false);
+			//practiceQuestion_1.setLineWrap(true);
 			
+//			//create the combo box with answer options
+//			questionOneList = new JComboBox<String>(optionsList);
+//			questionOneList.setEditable(false);
+//			questionOneList.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+			//create radiobutton answer options and group them
+			RBoption1 = new JRadioButton("with water");
+			RBoption2 = new JRadioButton("smother with baking soda");
+			RBoption3 = new JRadioButton("blow on it");
+			
+			ButtonGroup group = new ButtonGroup();
+			group.add(RBoption1);
+			group.add(RBoption2);
+			group.add(RBoption3);
 			
 			
 			//place questions and options in same panel
 			JPanel questionAnswer = new JPanel();
 			questionAnswer.setLayout(new BoxLayout(questionAnswer, BoxLayout.Y_AXIS));
 			questionAnswer.add(practiceQuestion_1);
-			questionAnswer.add(questionOneList);
+			questionAnswer.add(RBoption1);
+			questionAnswer.add(RBoption2);
+			questionAnswer.add(RBoption3);
 			
 			//initiate avatar.  initial state thinking
 			Companion questionOneAvatar = new Companion();
@@ -160,7 +175,7 @@ public class Assessor extends JPanel{
 			
 			//place question question and avatar in a panel with grid layout
 			questionAvatar = new JPanel();
-			questionAvatar.setLayout(new GridLayout(1,2));
+			questionAvatar.setLayout(new BoxLayout(questionAvatar, BoxLayout.X_AXIS));
 			
 			questionAvatar.add(questionAnswer);
 			questionAvatar.add(questionOneAvatar);
@@ -189,16 +204,16 @@ public class Assessor extends JPanel{
 			add(panelQuestion1);
 			
 			//add actionListener to JComboBox to store value in String			
-			questionOneList.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent event) {
-					answer = (String)questionOneList.getSelectedItem();
-				}
-			});
+//			questionOneList.addActionListener(new ActionListener() {
+//				public void actionPerformed(ActionEvent event) {
+//					answer = (String)questionOneList.getSelectedItem();
+//				}
+//			});
 			
 			//add actionListener to buttons
 			submit.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent event) {
-					if(answer == "smother with baking soda") {
+					if(RBoption2.isSelected()) {
 						questionAvatar.remove(questionOneAvatar);
 						questionOneAvatar.changeState(1);
 						questionAvatar.add(questionOneAvatar);
