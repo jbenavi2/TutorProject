@@ -25,12 +25,20 @@ public class Assessor extends JPanel{
 	// initial state when program starts.  Will show my name
 	int state = 0;
 	
+	//Grid Layout to hold Questions and Avatar
+	private JPanel questionAvatar;
+	
+	
 	// The panels for questions
 	private JPanel panelDefault;
 	private JPanel panelQuestion1;
 	private JPanel panelQuestion2;
 	private JPanel panelQuestion3;
 	private JPanel panelQuestion4;
+	
+	//
+	private String answer;
+	
 	
 	// The title labels for each panel
 	private JLabel myName;
@@ -40,7 +48,7 @@ public class Assessor extends JPanel{
 	private JLabel labelQuestion4;
 	
 	// Combo box with options for Question 1
-	private String[] optionsList = {"option1", "option2", "option3"};
+	private String[] optionsList = {"with water", "smother with baking soda", "blow on it"};
 	private JComboBox<String> questionOneList;
 	
 	// checkboxes for Question2
@@ -49,22 +57,55 @@ public class Assessor extends JPanel{
 	// buttons for Question 3
 	private JButton buttonOption1, buttonOption2, buttonOption3;
 	
+	// buttons for Next and Submit
+	private JButton next, submit;
+	
 	// textfield for Question 4
 	private JTextField textField;
 	
 	//default constructor
 	public Assessor() {
+		
+		//initialize the outer grid to contain question and avatar
+		questionAvatar = new JPanel();
+		questionAvatar.setLayout(new GridLayout(1,2));
+		
 		//create my label that only show my name
 		myName = new JLabel("Javier Benavides");
 		myName.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
-		//create my panel that will only contain my name
+		//initialize the Companion class for the avatar. initial state 0
+		Companion companionDefault = new Companion();
+		
+		//add myName and companion to questionAvatar layout
+		questionAvatar.add(myName);
+		questionAvatar.add(companionDefault);
+		
+		//create submit and back buttons
+		submit = new JButton("Submit");
+		submit.setPreferredSize(new Dimension(40,40));
+		next = new JButton("Next");
+		next.setPreferredSize(new Dimension(40,40));
+		
+		//create panel to hold buttons
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+//		buttonPanel.setLayout(new CardLayout());
+		
+		//add buttons to panel
+		buttonPanel.add(submit);
+		buttonPanel.add(next);
+		
+		//create my panel that will contain questionAvatar and submit/next buttons
 		panelDefault = new JPanel();
 		panelDefault.setLayout(new BoxLayout(panelDefault, BoxLayout.Y_AXIS));
-		panelDefault.add(myName);
+		panelDefault.add(questionAvatar);
+		panelDefault.add(buttonPanel);
 		setLayout(new BorderLayout());
 		add(panelDefault);
 	}
+	
+	
 	
 	//method for when the slider changes in Universe
 	public void changeState(int state) {
@@ -94,21 +135,91 @@ public class Assessor extends JPanel{
 			labelQuestion1 =  new JLabel("Question 1");
 			labelQuestion1.setAlignmentX(Component.CENTER_ALIGNMENT);
 			
-			//create the combo box
+			//generate the first question
+			JTextArea practiceQuestion_1 = new JTextArea(
+					"How do you put out a grease fire?");
+			practiceQuestion_1.setEditable(false);
+			practiceQuestion_1.setLineWrap(true);
+			
+			//create the combo box with answer options
 			questionOneList = new JComboBox<String>(optionsList);
 			questionOneList.setEditable(false);
 			questionOneList.setAlignmentX(Component.CENTER_ALIGNMENT);
+			
+			
+			
+			//place questions and options in same panel
+			JPanel questionAnswer = new JPanel();
+			questionAnswer.setLayout(new BoxLayout(questionAnswer, BoxLayout.Y_AXIS));
+			questionAnswer.add(practiceQuestion_1);
+			questionAnswer.add(questionOneList);
+			
+			//initiate avatar.  initial state thinking
+			Companion questionOneAvatar = new Companion();
+			questionOneAvatar.changeState(2);
+			
+			//place question question and avatar in a panel with grid layout
+			questionAvatar = new JPanel();
+			questionAvatar.setLayout(new GridLayout(1,2));
+			
+			questionAvatar.add(questionAnswer);
+			questionAvatar.add(questionOneAvatar);
+			
+			//create sumbit and next buttons
+			submit = new JButton("Submit");
+			next = new JButton("Next");
+			
+			//create panel to hold buttons
+			JPanel buttonPanel = new JPanel();
+			buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+			
+			//add buttons to buttonPanel
+			buttonPanel.add(submit);
+			buttonPanel.add(next);		
+
 			
 			//create my panel for when in state 1
 			panelQuestion1 = new JPanel();
 			panelQuestion1.setLayout(new BoxLayout(panelQuestion1, BoxLayout.Y_AXIS));
 			panelQuestion1.add(labelQuestion1);
-			panelQuestion1.add(questionOneList);
+			panelQuestion1.add(questionAvatar);
+			panelQuestion1.add(buttonPanel);
 			
 			//setLayout(new BorderLayout());
 			add(panelQuestion1);
 			
-			questionOneList.addActionListener(new ComboBoxListener());
+			//add actionListener to JComboBox to store value in String			
+			questionOneList.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					answer = (String)questionOneList.getSelectedItem();
+				}
+			});
+			
+			//add actionListener to buttons
+			submit.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					if(answer == "smother with baking soda") {
+						questionAvatar.remove(questionOneAvatar);
+						questionOneAvatar.changeState(1);
+						questionAvatar.add(questionOneAvatar);
+						panelQuestion1.updateUI();
+					}
+					else {
+						questionOneAvatar.changeState(4);
+						panelQuestion1.updateUI();
+					}
+					submit.setEnabled(false);
+					
+				}
+			});
+			next.addActionListener(new ActionListener() {
+				public void actionPerformed(ActionEvent event) {
+					changeState(2);
+					panelQuestion1.updateUI();
+					
+				}
+			});
+//			questionOneList.addActionListener(new ComboBoxListener());
 			
 			
 		}
@@ -221,6 +332,14 @@ public class Assessor extends JPanel{
 
 		
 	}//end CheckBoxListener
+	
+	//question 1 ButtonListener
+	private class questionOneButtonListener implements ActionListener{
+		
+		public void actionPerformed(ActionEvent event) {
+			Object source = event.getSource();
+		}
+	}
 	
 	//ButtonListener class listens to see if Option 1, 2, or 3 is pushed.
 	private class ButtonListener implements ActionListener{
