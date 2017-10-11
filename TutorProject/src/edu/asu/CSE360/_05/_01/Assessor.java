@@ -25,6 +25,8 @@ public class Assessor extends JPanel{
 	// initial state when program starts.  Will show my name
 	int state = 0;
 	
+	int score = 0;
+	
 	//Grid Layout to hold Questions and Avatar
 	private JPanel questionAvatar;
 	
@@ -108,6 +110,41 @@ public class Assessor extends JPanel{
 		add(panelDefault);
 	}
 	
+	public void results(int score) {
+		JLabel practiceResult = new JLabel("RESULTS");
+		practiceResult.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		//Generate a percent score
+		float percentage = ((float) score/5)*100;
+		String grade = Float.toString(percentage)+"%";
+		JLabel showGrade = new JLabel(grade);
+		
+		//Generate avatar based on score
+		Companion emotion = new Companion();
+		if(score >= 4) {
+			emotion.changeState(1);
+		}
+		else {
+			emotion.changeState(3);
+		}
+		
+		//group grade and Avatar together
+		JPanel gradeAvatar = new JPanel();
+		gradeAvatar.setLayout(new GridLayout(1,2));
+		gradeAvatar.add(showGrade);
+		gradeAvatar.add(emotion);
+		
+		panelDefault = new JPanel();
+		panelDefault.setLayout(new BoxLayout(panelDefault, BoxLayout.Y_AXIS));
+		panelDefault.add(practiceResult);
+		panelDefault.add(gradeAvatar);
+		
+		add(panelDefault);
+		panelDefault.updateUI();
+		
+		
+	}
+	
 	public void questionTwo() {
 		labelQuestion2 = new JLabel("Question 2");
 		labelQuestion2.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -171,6 +208,7 @@ public class Assessor extends JPanel{
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if(RBoption1.isSelected()) {
+					score++;
 					questionAvatar.remove(thinking);
 					Companion happy = new Companion();
 					happy.changeState(1);
@@ -261,6 +299,7 @@ public class Assessor extends JPanel{
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if(RBoption3.isSelected()) {
+					score++;
 					questionAvatar.remove(thinking);
 					Companion happy = new Companion();
 					happy.changeState(1);
@@ -350,6 +389,7 @@ public class Assessor extends JPanel{
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if(RBoption2.isSelected()) {
+					score++;
 					questionAvatar.remove(thinking);
 					Companion happy = new Companion();
 					happy.changeState(1);
@@ -440,6 +480,7 @@ public class Assessor extends JPanel{
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				if(RBoption2.isSelected()) {
+					score++;
 					questionAvatar.remove(thinking);
 					Companion happy = new Companion();
 					happy.changeState(1);
@@ -461,6 +502,7 @@ public class Assessor extends JPanel{
 		next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
 				remove(panelQuestion);
+				results(score);
 			}
 		});
 		
@@ -571,6 +613,7 @@ public class Assessor extends JPanel{
 			submit.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent event) {
 					if(RBoption2.isSelected()) {
+						score++;
 						questionAvatar.remove(thinking);
 						Companion happy = new Companion();
 						happy.changeState(1);
