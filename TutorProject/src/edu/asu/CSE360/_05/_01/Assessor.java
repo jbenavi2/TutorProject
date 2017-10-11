@@ -31,7 +31,7 @@ public class Assessor extends JPanel{
 	
 	// The panels for questions
 	private JPanel panelDefault;
-	private JPanel panelQuestion1;
+	private JPanel panelQuestion;
 	private JPanel panelQuestion2;
 	private JPanel panelQuestion3;
 	private JPanel panelQuestion4;
@@ -158,14 +158,14 @@ public class Assessor extends JPanel{
 		buttonPanel.add(next);
 		
 		//put it all together in the same panel
-		panelQuestion2 = new JPanel();
-		panelQuestion2.setLayout(new BoxLayout(panelQuestion2, BoxLayout.Y_AXIS));
-		panelQuestion2.add(labelQuestion2);
-		panelQuestion2.add(questionAvatar);
-		panelQuestion2.add(buttonPanel);
+		panelQuestion = new JPanel();
+		panelQuestion.setLayout(new BoxLayout(panelQuestion, BoxLayout.Y_AXIS));
+		panelQuestion.add(labelQuestion2);
+		panelQuestion.add(questionAvatar);
+		panelQuestion.add(buttonPanel);
 		
-		add(panelQuestion2);
-		panelQuestion2.updateUI();
+		add(panelQuestion);
+		panelQuestion.updateUI();
 		
 		//add ActionListener to buttons
 		submit.addActionListener(new ActionListener() {
@@ -175,14 +175,14 @@ public class Assessor extends JPanel{
 					Companion happy = new Companion();
 					happy.changeState(1);
 					questionAvatar.add(happy);
-					panelQuestion2.updateUI();
+					panelQuestion.updateUI();
 				}
 				else {
 					questionAvatar.remove(thinking);
 					Companion sorry = new Companion();
 					sorry.changeState(4);
 					questionAvatar.add(sorry);
-					panelQuestion2.updateUI();
+					panelQuestion.updateUI();
 				}
 				submit.setEnabled(false);
 				next.setEnabled(true);
@@ -191,7 +191,276 @@ public class Assessor extends JPanel{
 		
 		next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				remove(panelQuestion2);
+				remove(panelQuestion);
+				questionThree();
+			}
+		});
+		
+	}
+	
+	public void questionThree() {
+		labelQuestion2 = new JLabel("Question 3");
+		labelQuestion2.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		//generate Question 2
+		JLabel practiceQuestion_3 = new JLabel(
+				"What oil has the highest smoking point?");
+		
+		//radiobuttons for answer options
+		RBoption1 = new JRadioButton("Peanut Oil");
+		RBoption2 = new JRadioButton("Olive Oil");
+		RBoption3 = new JRadioButton("Avocado Oil");
+		
+		ButtonGroup group = new ButtonGroup();
+		group.add(RBoption1);
+		group.add(RBoption2);
+		group.add(RBoption3);
+		
+		//place questions and options in same panel
+		JPanel questionAnswer = new JPanel();
+		questionAnswer.setLayout(new BoxLayout(questionAnswer, BoxLayout.Y_AXIS));
+		questionAnswer.add(practiceQuestion_3);
+		questionAnswer.add(RBoption1);
+		questionAnswer.add(RBoption2);
+		questionAnswer.add(RBoption3);
+		
+		//initiate avatar.  intial thinking
+		Companion thinking = new Companion();
+		thinking.changeState(2);
+		
+		//place questionAnswer and Avatar in same panel
+		questionAvatar = new JPanel();
+		questionAvatar.setLayout(new BoxLayout(questionAvatar, BoxLayout.X_AXIS));
+		
+		questionAvatar.add(questionAnswer);
+		questionAvatar.add(thinking);
+		
+		//submit and next buttons
+		submit = new JButton("Submit");
+		next = new JButton("Next");
+		next.setEnabled(false);
+		
+		//create panel to hold buttons
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+		//add buttons to panel
+		buttonPanel.add(submit);
+		buttonPanel.add(next);
+		
+		//put it all together in the same panel
+		panelQuestion = new JPanel();
+		panelQuestion.setLayout(new BoxLayout(panelQuestion, BoxLayout.Y_AXIS));
+		panelQuestion.add(labelQuestion2);
+		panelQuestion.add(questionAvatar);
+		panelQuestion.add(buttonPanel);
+		
+		add(panelQuestion);
+		panelQuestion.updateUI();
+		
+		//add ActionListener to buttons
+		submit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				if(RBoption3.isSelected()) {
+					questionAvatar.remove(thinking);
+					Companion happy = new Companion();
+					happy.changeState(1);
+					questionAvatar.add(happy);
+					panelQuestion.updateUI();
+				}
+				else {
+					questionAvatar.remove(thinking);
+					Companion sorry = new Companion();
+					sorry.changeState(4);
+					questionAvatar.add(sorry);
+					panelQuestion.updateUI();
+				}
+				submit.setEnabled(false);
+				next.setEnabled(true);
+			}
+		});
+		
+		next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				remove(panelQuestion);
+				questionFour();
+			}
+		});
+	}
+	
+	public void questionFour() {
+		labelQuestion2 = new JLabel("Question 4");
+		labelQuestion2.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		//generate Question 2
+		JLabel practiceQuestion_4 = new JLabel(
+				"When you poach something, you cook it with what?");
+		
+		//radiobuttons for answer options
+		RBoption1 = new JRadioButton("Vegetables");
+		RBoption2 = new JRadioButton("Liquid");
+		RBoption3 = new JRadioButton("Oil");
+		
+		ButtonGroup group = new ButtonGroup();
+		group.add(RBoption1);
+		group.add(RBoption2);
+		group.add(RBoption3);
+		
+		//place questions and options in same panel
+		JPanel questionAnswer = new JPanel();
+		questionAnswer.setLayout(new BoxLayout(questionAnswer, BoxLayout.Y_AXIS));
+		questionAnswer.add(practiceQuestion_4);
+		questionAnswer.add(RBoption1);
+		questionAnswer.add(RBoption2);
+		questionAnswer.add(RBoption3);
+		
+		//initiate avatar.  intial thinking
+		Companion thinking = new Companion();
+		thinking.changeState(2);
+		
+		//place questionAnswer and Avatar in same panel
+		questionAvatar = new JPanel();
+		questionAvatar.setLayout(new BoxLayout(questionAvatar, BoxLayout.X_AXIS));
+		
+		questionAvatar.add(questionAnswer);
+		questionAvatar.add(thinking);
+		
+		//submit and next buttons
+		submit = new JButton("Submit");
+		next = new JButton("Next");
+		next.setEnabled(false);
+		
+		//create panel to hold buttons
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+		//add buttons to panel
+		buttonPanel.add(submit);
+		buttonPanel.add(next);
+		
+		//put it all together in the same panel
+		panelQuestion = new JPanel();
+		panelQuestion.setLayout(new BoxLayout(panelQuestion, BoxLayout.Y_AXIS));
+		panelQuestion.add(labelQuestion2);
+		panelQuestion.add(questionAvatar);
+		panelQuestion.add(buttonPanel);
+		
+		add(panelQuestion);
+		panelQuestion.updateUI();
+		
+		//add ActionListener to buttons
+		submit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				if(RBoption2.isSelected()) {
+					questionAvatar.remove(thinking);
+					Companion happy = new Companion();
+					happy.changeState(1);
+					questionAvatar.add(happy);
+					panelQuestion.updateUI();
+				}
+				else {
+					questionAvatar.remove(thinking);
+					Companion sorry = new Companion();
+					sorry.changeState(4);
+					questionAvatar.add(sorry);
+					panelQuestion.updateUI();
+				}
+				submit.setEnabled(false);
+				next.setEnabled(true);
+			}
+		});
+		
+		next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				remove(panelQuestion);
+				questionFive();
+			}
+		});
+		
+	}
+	
+	public void questionFive() {
+		labelQuestion2 = new JLabel("Question 5");
+		labelQuestion2.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		//generate Question 2
+		JLabel practiceQuestion_5 = new JLabel(
+				"What do you call the cook who makes sauces?");
+		
+		//radiobuttons for answer options
+		RBoption1 = new JRadioButton("Sommelier");
+		RBoption2 = new JRadioButton("Saucier");
+		RBoption3 = new JRadioButton("Sauce Guy");
+		
+		ButtonGroup group = new ButtonGroup();
+		group.add(RBoption1);
+		group.add(RBoption2);
+		group.add(RBoption3);
+		
+		//place questions and options in same panel
+		JPanel questionAnswer = new JPanel();
+		questionAnswer.setLayout(new BoxLayout(questionAnswer, BoxLayout.Y_AXIS));
+		questionAnswer.add(practiceQuestion_5);
+		questionAnswer.add(RBoption1);
+		questionAnswer.add(RBoption2);
+		questionAnswer.add(RBoption3);
+		
+		//initiate avatar.  intial thinking
+		Companion thinking = new Companion();
+		thinking.changeState(2);
+		
+		//place questionAnswer and Avatar in same panel
+		questionAvatar = new JPanel();
+		questionAvatar.setLayout(new BoxLayout(questionAvatar, BoxLayout.X_AXIS));
+		
+		questionAvatar.add(questionAnswer);
+		questionAvatar.add(thinking);
+		
+		//submit and next buttons
+		submit = new JButton("Submit");
+		next = new JButton("Next");
+		next.setEnabled(false);
+		
+		//create panel to hold buttons
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+		//add buttons to panel
+		buttonPanel.add(submit);
+		buttonPanel.add(next);
+		
+		//put it all together in the same panel
+		panelQuestion = new JPanel();
+		panelQuestion.setLayout(new BoxLayout(panelQuestion, BoxLayout.Y_AXIS));
+		panelQuestion.add(labelQuestion2);
+		panelQuestion.add(questionAvatar);
+		panelQuestion.add(buttonPanel);
+		
+		add(panelQuestion);
+		panelQuestion.updateUI();
+		
+		//add ActionListener to buttons
+		submit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				if(RBoption2.isSelected()) {
+					questionAvatar.remove(thinking);
+					Companion happy = new Companion();
+					happy.changeState(1);
+					questionAvatar.add(happy);
+					panelQuestion.updateUI();
+				}
+				else {
+					questionAvatar.remove(thinking);
+					Companion sorry = new Companion();
+					sorry.changeState(4);
+					questionAvatar.add(sorry);
+					panelQuestion.updateUI();
+				}
+				submit.setEnabled(false);
+				next.setEnabled(true);
+			}
+		});
+		
+		next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				remove(panelQuestion);
 			}
 		});
 		
@@ -282,14 +551,14 @@ public class Assessor extends JPanel{
 
 			
 			//create my panel for when in state 1
-			panelQuestion1 = new JPanel();
-			panelQuestion1.setLayout(new BoxLayout(panelQuestion1, BoxLayout.Y_AXIS));
-			panelQuestion1.add(labelQuestion1);
-			panelQuestion1.add(questionAvatar);
-			panelQuestion1.add(buttonPanel);
+			panelQuestion = new JPanel();
+			panelQuestion.setLayout(new BoxLayout(panelQuestion, BoxLayout.Y_AXIS));
+			panelQuestion.add(labelQuestion1);
+			panelQuestion.add(questionAvatar);
+			panelQuestion.add(buttonPanel);
 			
 			//setLayout(new BorderLayout());
-			add(panelQuestion1);
+			add(panelQuestion);
 			
 			//add actionListener to JComboBox to store value in String			
 //			questionOneList.addActionListener(new ActionListener() {
@@ -306,14 +575,14 @@ public class Assessor extends JPanel{
 						Companion happy = new Companion();
 						happy.changeState(1);
 						questionAvatar.add(happy);
-						panelQuestion1.updateUI();
+						panelQuestion.updateUI();
 					}
 					else {
 						questionAvatar.remove(thinking);
 						Companion sorry = new Companion();
 						sorry.changeState(4);
 						questionAvatar.add(sorry);
-						panelQuestion1.updateUI();
+						panelQuestion.updateUI();
 					}
 					submit.setEnabled(false);
 					next.setEnabled(true);
@@ -322,8 +591,8 @@ public class Assessor extends JPanel{
 			});
 			next.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent event) {
+					remove(panelQuestion);
 					questionTwo();
-					remove(panelQuestion1);
 
 //					panelQuestion1.updateUI();				
 					
