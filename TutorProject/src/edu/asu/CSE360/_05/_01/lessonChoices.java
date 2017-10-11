@@ -98,5 +98,18 @@ public class lessonChoices extends JPanel {
  				}
  			}
 		});
+		//actionListener for TestButton added by Javier B
+				testButton.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent event) {
+						if(testButton.isEnabled()) {
+							removeAll();
+							Assessor quiz = new Assessor();
+							quiz.changeState(1);
+							add(quiz);
+							revalidate();
+							repaint();
+						}
+					}
+				});
 	}
 }
