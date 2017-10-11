@@ -73,19 +73,6 @@ public class lessonChoices extends JPanel {
 		videoButton.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
  				if (videoButton.isEnabled()) {
- 					removeAll();
- 					revalidate();
- 					repaint();
- 					URL m;
-					try {
-						m = new File("resources/bailey.mpeg").toURI().toURL();
-	 					videoLesson video = new videoLesson(m);
-	 					add(video);
-
-					} catch (MalformedURLException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
-					}
  				}
  			}
  		});
