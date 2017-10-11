@@ -1,3 +1,5 @@
+package edu.asu.CSE360._05._01;
+
 // Fig 21.6: MediaPanel.java
 // A JPanel the plays media from a URL
 import java.awt.BorderLayout;
