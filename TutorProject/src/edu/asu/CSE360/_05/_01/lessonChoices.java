@@ -16,7 +16,6 @@ public class lessonChoices extends JPanel {
 	
 	private JPanel lessonPanel;	
 	private JButton audioButton, videoButton,testButton, backButton;
-	private videoLesson video;
 	
 	public lessonChoices() {
 		audioButton = new JButton("Text");
