@@ -11,6 +11,18 @@ import java.nio.file.Paths;
 import javax.print.attribute.standard.Media;
 import javax.swing.*;
 
+/**
+
+* Description:
+* 	Creates a JPanel that holds the options of a lesson, Learn, take assessment, and return to the list of lessons
+* Assignment number:
+* 	Recitation Project 3
+* Completion time:
+* 	1 Hours
+*
+* @author Andrew Bui
+* @version 1
+*/
 
 public class lessonChoices extends JPanel {
 	

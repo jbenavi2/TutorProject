@@ -1,6 +1,5 @@
 package edu.asu.CSE360._05._01;
 
-
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Font;
@@ -17,6 +16,20 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+
+/**
+
+* Description:
+* 	Creates the initial JPanel, there is a dropdown menu and go button. The user selects their lesson, then clicks
+* 	go to advance to the next scene.
+* Assignment number:
+* 	Recitation Project 3
+* Completion time:
+* 	1 Hours
+*
+* @author Andrew Bui
+* @version 1
+*/
 
 public class lessonList extends JPanel {
 

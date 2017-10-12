@@ -4,12 +4,11 @@ package edu.asu.CSE360._05._01;
 /**
 
 * Description:
-* 	Creates a Jframe that holds panels created by the the assessor, companion and tutor classes.
-* 	Includes a slider used to change content within the panels, depending on the position.
+* 	Creates a Jframe that holds the first panel, a list of lessons and all subsequent panels
 * Assignment number:
-* 	Recitation Project 1
+* 	Recitation Project 3
 * Completion time:
-* 	2 Hours
+* 	0.5 Hours
 *
 * @author Andrew Bui
 * @version 1

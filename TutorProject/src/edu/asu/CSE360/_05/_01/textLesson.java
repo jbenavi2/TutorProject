@@ -1,6 +1,5 @@
 package edu.asu.CSE360._05._01;
 
-
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.FlowLayout;
@@ -8,6 +7,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+
+/**
+
+* Description:
+* 	JPanel that holds lesson info, the topic can be chosen with a button at the top. The user cannot edit the text.
+*   The Done button takes the user back to the lesson choices.
+* Assignment number:
+* 	Recitation Project 3
+* Completion time:
+* 	1.5 Hours
+*
+* @author Andrew Bui
+* @version 1
+*/
 
 public class textLesson extends JPanel {
 	private JPanel choicePanel;
@@ -86,7 +99,7 @@ public class textLesson extends JPanel {
 					"Pour in rice\r\n" + 
 					"Add it to the boiling water.\r\n" + 
 					"Stir once, or just enough to separate the rice\r\n" + 
-					"Use a wooden spoon to separate any clumps. Don’t over-stir: That can cause the rice to become sticky.\r\n" + 
+					"Use a wooden spoon to separate any clumps. Do not over-stir: That can cause the rice to become sticky.\r\n" + 
 					"Cover the pot and simmer\r\n" + 
 					"Be sure the lid fits tightly on the pot. Turn down the heat to its lowest setting. Let rice simmer for about 18 minutes, then remove from heat and allow the rice to steam in the pot for another 5 minutes.\r\n" + 
 					"Fluff rice with a fork\r\n" + 
@@ -109,9 +122,9 @@ public class textLesson extends JPanel {
 					"Follow These Steps\r\n" + 
 					"\r\n" + 
 					"Cut the top, then slice in half\r\n" + 
-					"Using a sharp chef’s knife, slice about a half an inch off the top of the onion and discard. Turn the onion to rest on this flat end and slice in half vertically.\r\n" + 
+					"Using a sharp chefs knife, slice about a half an inch off the top of the onion and discard. Turn the onion to rest on this flat end and slice in half vertically.\r\n" + 
 					"\r\n" + 
-					"Tip: If you’re only using half of the onion, leave the skin on and wrap what you’re not using in plastic wrap.\r\n" + 
+					"Tip: If you are only using half of the onion, leave the skin on and wrap what you are not using in plastic wrap.\r\n" + 
 					"Peel off the papery layers\r\n" + 
 					"Remove and discard the skin.\r\n" + 
 					"Chop vertically\r\n" + 
@@ -135,9 +148,9 @@ public class textLesson extends JPanel {
  							"\r\n" + 
  							"Method 1: Use an Electric Sharpener. A good quality electric sharpener is an option, but I strongly discourage their use. First off, they remove a tremendous amount of material from your edge. Sharpen your knife a dozen times, and you've lost a good half-centimeter of width, throwing it off balance, and rendering any blade with a bolster (i.e. most high quality forged blades) useless. Secondly, even the best models provide only an adequate edge. If you don't mind replacing your knives every few years and are happy with the edge they give you, they are an option. But a much better choice is to...\r\n" + 
  							"\r\n" + 
- 							"Method 2: Send it out to a professional. This is a good option—provided you have a good knife sharpener living nearby, and are willing to pay to have the services performed. If you plan to sharpen your blades a dozen or so times a year as I do, this can get quite expensive. All but the best pros also use a grinding stone, which again will take away much more material than is necessary from your blade, reducing its lifespan. Want to forge a stronger relationship with your blade? Then you'll want to...\r\n" + 
+ 							"Method 2: Send it out to a professional. This is a good option provided you have a good knife sharpener living nearby, and are willing to pay to have the services performed. If you plan to sharpen your blades a dozen or so times a year as I do, this can get quite expensive. All but the best pros also use a grinding stone, which again will take away much more material than is necessary from your blade, reducing its lifespan. Want to forge a stronger relationship with your blade? Then you'll want to...\r\n" + 
  							"\r\n" + 
- 							"Method 3: Use a Sharpening Stone. The best method by far. Not only will it give you the best edge, it also removes the least amount of material. With a fine enough grit, your knife should be able to take hairs off your arm when you've finished. Additionally—and I'm not kidding about the importance of this one—the act of sharpening your knife will help you create a much stronger bond with your blade, and a knife that is treated respectfully will behave much better for its owner.");
+ 							"Method 3: Use a Sharpening Stone. The best method by far. Not only will it give you the best edge, it also removes the least amount of material. With a fine enough grit, your knife should be able to take hairs off your arm when you've finished. Additionally, and I'm not kidding about the importance of this on, the act of sharpening your knife will help you create a much stronger bond with your blade, and a knife that is treated respectfully will behave much better for its owner.");
  				}
  			}
 		});
@@ -170,17 +183,17 @@ public class textLesson extends JPanel {
  							"Follow These Steps\r\n" + 
  							"\r\n" + 
  							"Boil water in a large pot\r\n" + 
- 							"To make sure pasta doesn’t stick together, use at least 4 quarts of water for every pound of noodles.\r\n" + 
- 							"Salt the water with at least a tablespoon—more is fine\r\n" + 
+ 							"To make sure pasta doesnt stick together, use at least 4 quarts of water for every pound of noodles.\r\n" + 
+ 							"Salt the water with at least a tablespoon, more is fine\r\n" + 
  							"The salty water adds flavor to the pasta.\r\n" + 
  							"Add pasta\r\n" + 
- 							"Pour pasta into boiling water. Don’t break the pasta; it will soften up within 30 seconds and fit into the pot.\r\n" + 
+ 							"Pour pasta into boiling water. Dont break the pasta; it will soften up within 30 seconds and fit into the pot.\r\n" + 
  							"Stir the pasta\r\n" + 
- 							"As the pasta starts to cook, stir it well with the tongs so the noodles don’t stick to each other (or the pot).\r\n" + 
+ 							"As the pasta starts to cook, stir it well with the tongs so the noodles dont stick to each other (or the pot).\r\n" + 
  							"Test the pasta by tasting it, it should be firm but not crunchy\r\n" + 
- 							"Follow the cooking time on the package, but always taste pasta before draining to make sure the texture is right. Pasta cooked properly should be al dente—a little chewy.\r\n" + 
+ 							"Follow the cooking time on the package, but always taste pasta before draining to make sure the texture is right. Pasta cooked properly should be al dente/ a little chewy.\r\n" + 
  							"Drain the pasta\r\n" + 
- 							"Drain cooked pasta well in a colander. If serving hot, add sauce right away; if you’re making a pasta salad, run noodles under cold water to stop the cooking.");
+ 							"Drain cooked pasta well in a colander. If serving hot, add sauce right away; if youre making a pasta salad, run noodles under cold water to stop the cooking.");
  				}
  			}
 		});
