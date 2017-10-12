@@ -2,8 +2,8 @@ package edu.asu.CSE360._05._01;
 /**
 * The panel will display one of four GIF options for different types of faces: 
 * happy, thinking, worried, and sorry.
-* Assignment number: Recitation Project 2
-* Completion time: .5 hours
+* Assignment number: Recitation Project 3
+* Completion time: 1 hour
 *
 * @author Natalie DePaula
 * @version 2.0
