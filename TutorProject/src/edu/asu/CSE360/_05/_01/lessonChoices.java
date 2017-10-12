@@ -104,7 +104,7 @@ public class lessonChoices extends JPanel {
 						if(testButton.isEnabled()) {
 							removeAll();
 							Assessor quiz = new Assessor();
-							quiz.changeState(1);
+							quiz.questionOne();
 							add(quiz);
 							revalidate();
 							repaint();
