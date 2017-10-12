@@ -77,7 +77,7 @@ public class lessonList extends JPanel {
 		c.ipadx = 100;
 		c.gridx = 1;
 		c.gridy = 1;
-		c.insets = new Insets(0,475,0,500);
+		c.insets = new Insets(50,475,0,500);
 		chooseLessonPanel.add(goButton, c);
 		
 		//gordon

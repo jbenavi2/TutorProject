@@ -15,23 +15,28 @@ import javax.swing.*;
 public class lessonChoices extends JPanel {
 	
 	private JPanel lessonPanel;	
-	private JButton audioButton, videoButton,testButton, backButton;
+	private JButton textButton, testButton, backButton;
+	private ImageIcon gordonA;
+	private JLabel gordonLabel;
 	
 	public lessonChoices() {
-		audioButton = new JButton("Text");
-		audioButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-		videoButton = new JButton("Video");
-		videoButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		//button inits
+		textButton = new JButton("Learn!");
+		textButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		textButton.setFont(new Font("Arial", Font.PLAIN,20));
+		
 		testButton = new JButton("Assessments");
 		testButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		testButton.setFont(new Font("Arial", Font.PLAIN,20));
+		
 		backButton = new JButton("BACK");
 		backButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+		backButton.setFont(new Font("Arial", Font.PLAIN,20));
 		
 		//create my panel that will only contain my name
 		lessonPanel = new JPanel();
 		lessonPanel.setLayout(new GridLayout(1,2));
-		lessonPanel.add(audioButton);
-		lessonPanel.add(videoButton);
+		lessonPanel.add(textButton);
 		setLayout(new GridBagLayout());
 		GridBagConstraints c = new GridBagConstraints();
 
@@ -41,8 +46,7 @@ public class lessonChoices extends JPanel {
 		c.gridy = 0;
 		c.ipadx = 800;
 		c.ipady = 30;
-		c.weighty = 1.0;
-		c.insets = new Insets(100,0,50,0);
+		c.insets = new Insets(0,0,10,0);
 		add(lessonPanel,c);
 		
 		//go to test button
@@ -52,9 +56,7 @@ public class lessonChoices extends JPanel {
 		c.gridy = 1;
 		c.ipadx = 100;
 		c.ipady = 40;
-		c.weightx = 0.0;
-		c.weighty = 1.0;
-		c.insets = new Insets(300,0,20,0);
+		c.insets = new Insets(50,0,50,0);
 		add(testButton,c);
 		
 		//back Button
@@ -64,20 +66,22 @@ public class lessonChoices extends JPanel {
 		c.gridy = 2;
 		c.ipadx = 50;
 		c.ipady = 20;
-		c.weightx = 0.0;
-		c.weighty = 1.0;
 		c.insets = new Insets(10,300,10,300);
 		add(backButton,c);
 		
-		videoButton.addActionListener(new ActionListener() {
+		//picture of gordon
+		c = new GridBagConstraints();
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.gridx = 1;
+		c.gridy = 3;
+		gordonA = new ImageIcon("resources/gr2.jpg");
+		gordonLabel = new JLabel("", gordonA, JLabel.CENTER);
+		add(gordonLabel,c);
+		
+		//go to text on topics
+		textButton.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
- 				if (videoButton.isEnabled()) {
- 				}
- 			}
- 		});
-		audioButton.addActionListener(new ActionListener() {
- 			public void actionPerformed(ActionEvent e) {
- 				if (audioButton.isEnabled()) {
+ 				if (textButton.isEnabled()) {
  					removeAll();
  					revalidate();
  					repaint();
@@ -86,6 +90,7 @@ public class lessonChoices extends JPanel {
  				}
  			}
 		});
+		//listen for back button
 		backButton.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
  				if (backButton.isEnabled()) {
