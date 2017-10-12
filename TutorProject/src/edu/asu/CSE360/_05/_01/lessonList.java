@@ -25,7 +25,7 @@ import javax.swing.SwingConstants;
 * Assignment number:
 * 	Recitation Project 3
 * Completion time:
-* 	1 Hours
+* 	2 Hours
 *
 * @author Andrew Bui
 * @version 1
