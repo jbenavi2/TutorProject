@@ -120,8 +120,8 @@ public class lessonChoices extends JPanel {
 					public void actionPerformed(ActionEvent event) {
 						if(testButton.isEnabled()) {
 							removeAll();
-							Assessor quiz = new Assessor();
-							quiz.questionOne();
+							RevisedAssessor quiz = new RevisedAssessor();
+							//quiz.questionOne();
 							add(quiz);
 							revalidate();
 							repaint();

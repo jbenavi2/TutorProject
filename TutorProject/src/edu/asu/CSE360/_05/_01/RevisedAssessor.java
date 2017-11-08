@@ -8,7 +8,7 @@ import javax.swing.*;
 public class RevisedAssessor extends JPanel{
 	int score = 0;
 	
-	CompanionPanel companion = new CompanionPanel();
+	private CompanionPanel companion;
 	
 	private JPanel defaultPanel;
 	private JPanel panelQuestion;
@@ -27,7 +27,17 @@ public class RevisedAssessor extends JPanel{
 		labelQuestion = new JLabel("ARE YOU READY?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
+		//initiate companion
+		companion = new CompanionPanel();
+		BasicCompanion basic = new BasicCompanion();
+		companion.setCompanion(basic);
+		companion.showYourself();
 		
+		
+		defaultPanel.add(labelQuestion);
+		defaultPanel.add(companion);
+		
+		add(defaultPanel);
 		
 	}
 

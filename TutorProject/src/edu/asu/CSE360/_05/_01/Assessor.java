@@ -1,5 +1,5 @@
-package edu.asu.CSE360._05._01;
-/**
+/*package edu.asu.CSE360._05._01;
+*//**
 * 10 question will be displayed.  One on each slider
 * with different option styles for selecting answers.
 * Those option styles include using a Jradiobuttons, checkboxes,
@@ -9,7 +9,7 @@ package edu.asu.CSE360._05._01;
 *
 * @author Javier Benavides
 * @version 1.0
-*/
+*//*
 
 
 import java.awt.*;
@@ -1057,4 +1057,4 @@ public class Assessor extends JPanel{
 		
 	}
 	
-}
+}*/
