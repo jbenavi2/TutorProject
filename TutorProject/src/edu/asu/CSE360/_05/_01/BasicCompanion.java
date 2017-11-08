@@ -6,10 +6,10 @@ public class BasicCompanion implements Companion{
 	@Override
 	public void doSomething(JComponent panel) {
 		
-		ImageIcon happy = new ImageIcon("resources/happy.gif");
-		JLabel happyLabel = new JLabel();
-		happyLabel.setIcon(happy);
-		panel.add(happyLabel);		
+		ImageIcon fire = new ImageIcon("resources/fireGordon.gif");
+		JLabel fireLabel = new JLabel();
+		fireLabel.setIcon(fire);
+		panel.add(fireLabel);		
 		
 	}
 
