@@ -6,7 +6,9 @@ import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
 public class RevisedAssessor extends JPanel{
-	int score = 0;		//keep score of questions answered correctly
+	int correct = 0;		//keep score of questions answered correctly
+	int incorrect = 0;
+	
 	
 	private CompanionPanel companion;	
 	private JPanel entirePanel;
