@@ -32,9 +32,10 @@ public class Universe extends JFrame
 		Container content = frame.getContentPane();
 		
 		//initial State - Choose Lesson
-		content.setLayout(new GridBagLayout());
-		lessonList chooseLesson = new lessonList();
-		content.add(chooseLesson);
+		//content.setLayout(new GridBagLayout());
+		//lessonList chooseLesson = new lessonList();
+		Login loginScreen = new Login();
+		content.add(loginScreen);
 		
 		//set frame size and visible
 		frame.setSize(1280,720);

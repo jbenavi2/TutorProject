@@ -107,10 +107,15 @@ public class lessonChoices extends JPanel {
  			public void actionPerformed(ActionEvent e) {
  				if (backButton.isEnabled()) {
  					removeAll();
- 					lessonList chooseLesson = new lessonList();
- 					add(chooseLesson);
- 					revalidate();
  					repaint();
+ 					revalidate();
+ 					setLayout(new BorderLayout());
+ 					TutorOptions tutorChoice = new TutorOptions();
+					add(tutorChoice, BorderLayout.CENTER);
+					//lessonList2 chooseLesson = new lessonList2();
+					//add(chooseLesson);
+					revalidate();
+					repaint();
  					
  				}
  			}

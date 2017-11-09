@@ -69,10 +69,11 @@ public class textLesson extends JPanel {
  			public void actionPerformed(ActionEvent e) {
  				if (doneButton.isEnabled()) {
  					removeAll();
- 					revalidate();
- 					repaint();
-					lessonChoices lessonPanel = new lessonChoices();
-					add(lessonPanel,BorderLayout.CENTER);
+					setLayout(new BorderLayout());
+					lessonList2 chooseLesson = new lessonList2();
+					add(chooseLesson, BorderLayout.CENTER);
+					revalidate();
+					repaint();
  				}
  			}
 		});
