@@ -9,8 +9,8 @@ package edu.asu.CSE360._05._01;
 * @version 2.0
 */
 
-import java.awt.*;
-import java.awt.event.*;
+//import java.awt.*;
+//import java.awt.event.*;
 import javax.swing.*;
 
 public interface Companion {
