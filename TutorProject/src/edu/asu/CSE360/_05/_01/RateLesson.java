@@ -69,7 +69,7 @@ public class RateLesson extends JPanel {
 		add(scroll);
 		
 		JComboBox lessonChoice = new JComboBox();
-		lessonChoice.setModel(new DefaultComboBoxModel(new String[] {"Select Lesson...", "Basics of Cooking"}));
+		lessonChoice.setModel(new DefaultComboBoxModel(new String[] {"Select Lesson...", "Basics of Cooking", "Eggs and Baking"}));
 		lessonChoice.setBounds(89, 521, 209, 45);
 		add(lessonChoice);
 		

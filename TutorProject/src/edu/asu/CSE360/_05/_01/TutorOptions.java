@@ -5,6 +5,8 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 //import com.jgoodies.forms.layout.FormLayout;
 //import com.jgoodies.forms.layout.ColumnSpec;
@@ -14,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class TutorOptions extends JPanel {
 
@@ -21,6 +24,8 @@ public class TutorOptions extends JPanel {
 	 * Create the panel.
 	 */
 	public TutorOptions() {
+		setBackground(Color.DARK_GRAY);
+		setForeground(Color.DARK_GRAY);
 		setLayout(null);
 		
 		JButton lessonButton = new JButton("LESSONS");
@@ -29,14 +34,14 @@ public class TutorOptions extends JPanel {
 				if (lessonButton.isEnabled()) {
 					removeAll();
 					setLayout(new BorderLayout());
-					lessonList2 chooseLesson = new lessonList2();
+					lessonList chooseLesson = new lessonList();
 					add(chooseLesson, BorderLayout.CENTER);
 					revalidate();
 					repaint();
 				}
 			}
 		});
-		lessonButton.setBounds(542, 230, 196, 74);
+		lessonButton.setBounds(550, 141, 196, 74);
 		add(lessonButton);
 		
 		JButton reviewButton = new JButton("RATE");
@@ -50,7 +55,7 @@ public class TutorOptions extends JPanel {
 				repaint();
 			}
 		});
-		reviewButton.setBounds(911, 230, 196, 74);
+		reviewButton.setBounds(923, 141, 196, 74);
 		add(reviewButton);
 		
 		JButton profile = new JButton("PROFILE");
@@ -64,13 +69,16 @@ public class TutorOptions extends JPanel {
 				repaint();
 			}
 		});
-		profile.setBounds(173, 230, 196, 74);
+		profile.setBounds(177, 141, 196, 74);
 		add(profile);
 		
-		JLabel placeholder = new JLabel("placeholder img");
-		placeholder.setHorizontalAlignment(SwingConstants.CENTER);
-		placeholder.setBounds(532, 577, 215, 14);
-		add(placeholder);
+		ImageIcon meat = new ImageIcon("resources/fireGordon.gif");
+		
+		JLabel introRamsay = new JLabel();
+		introRamsay.setIcon(meat);
+		introRamsay.setHorizontalAlignment(SwingConstants.CENTER);
+		introRamsay.setBounds(391, 315, 514, 279);
+		add(introRamsay);
 		
 		JButton logoutButton = new JButton("LOGOUT");
 		logoutButton.addActionListener(new ActionListener() {

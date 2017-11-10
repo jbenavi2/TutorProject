@@ -21,6 +21,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import sun.audio.*;
+import java.io.*;
+
 public class Universe extends JFrame
 {
 	public static void main(String[] args) 
@@ -30,6 +33,24 @@ public class Universe extends JFrame
 		JFrame frame = new JFrame("Cooking Tutor");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container content = frame.getContentPane();
+		
+		//start music
+		//comment out if this throws error. Uses restricted API? Had to change eclipse setting to get it working
+		String Filename = "resources/song.wav";
+		try {
+			InputStream in = new FileInputStream(Filename);
+			// Create an AudioStream object from the input stream.
+			AudioStream as = new AudioStream(in);         
+			// Use the static class member "player" from class AudioPlayer to play
+			// clip.
+			AudioPlayer.player.start(as);           	
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+         
+		
 		
 		//initial State - Choose Lesson
 		//content.setLayout(new GridBagLayout());

@@ -14,6 +14,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class createAccount extends JPanel {
 	private JTextField nameField;
@@ -23,6 +24,7 @@ public class createAccount extends JPanel {
 	 * Create the panel.
 	 */
 	public createAccount(){
+		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
 		nameField = new JTextField();
