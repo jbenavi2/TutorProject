@@ -54,6 +54,16 @@ public class TutorOptions extends JPanel {
 		add(reviewButton);
 		
 		JButton profile = new JButton("PROFILE");
+		profile.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				removeAll();
+				setLayout(new BorderLayout());
+				viewProfile profile = new viewProfile();
+				add(profile);
+				revalidate();
+				repaint();
+			}
+		});
 		profile.setBounds(173, 230, 196, 74);
 		add(profile);
 		

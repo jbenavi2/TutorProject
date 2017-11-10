@@ -20,7 +20,6 @@ public class lessonChoices2 extends JPanel {
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
-
 				setLayout(new BorderLayout());
 				lessonList2 chooseLesson = new lessonList2();
 				add(chooseLesson, BorderLayout.CENTER);

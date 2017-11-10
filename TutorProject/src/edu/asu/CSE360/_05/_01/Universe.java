@@ -39,6 +39,7 @@ public class Universe extends JFrame
 		
 		//set frame size and visible
 		frame.setSize(1280,720);
+		frame.setResizable(false);
 		frame.setVisible(true);
 	  }
 }
