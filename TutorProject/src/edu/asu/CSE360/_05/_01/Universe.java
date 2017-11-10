@@ -36,6 +36,7 @@ public class Universe extends JFrame
 		
 		//start music
 		//comment out if this throws error. Uses restricted API? Had to change eclipse setting to get it working
+		/*
 		String Filename = "resources/song.wav";
 		try {
 			InputStream in = new FileInputStream(Filename);
@@ -49,7 +50,7 @@ public class Universe extends JFrame
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-         
+         	*/
 		
 		
 		//initial State - Choose Lesson
