@@ -7,22 +7,23 @@ import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
-public class lessonChoices2 extends JPanel {
+public class lessonChoicesMeat extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public lessonChoices2() {
+	public lessonChoicesMeat() {
+		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
 		JButton backButton = new JButton("BACK");
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
-
 				setLayout(new BorderLayout());
-				lessonList2 chooseLesson = new lessonList2();
+				lessonList chooseLesson = new lessonList();
 				add(chooseLesson, BorderLayout.CENTER);
 				revalidate();
 				repaint();
@@ -37,7 +38,7 @@ public class lessonChoices2 extends JPanel {
 				if (learnButton.isEnabled()) {
  					removeAll();
  					setLayout(new BorderLayout());
- 					textLesson text = new textLesson();
+ 					textLessonMeat text = new textLessonMeat();
  					add(text);
  					revalidate();
  					repaint();

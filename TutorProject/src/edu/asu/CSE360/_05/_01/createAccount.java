@@ -4,32 +4,38 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-
 import java.awt.BorderLayout;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class createAccount extends JPanel {
-	private JTextField textField;
-	private JTextField textField_1;
+	private JTextField nameField;
+	private JTextField passField;
 
 	/**
 	 * Create the panel.
 	 */
-	public createAccount() {
+	public createAccount(){
+		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
-		textField = new JTextField();
-		textField.setBounds(527, 117, 225, 39);
-		add(textField);
-		textField.setColumns(10);
+		nameField = new JTextField();
+		nameField.setBounds(527, 117, 225, 39);
+		add(nameField);
+		nameField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(527, 306, 225, 39);
-		add(textField_1);
+		passField = new JTextField();
+		passField.setColumns(10);
+		passField.setBounds(527, 306, 225, 39);
+		add(passField);
 		
 		JLabel userName = new JLabel("Username:");
 		userName.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -46,6 +52,17 @@ public class createAccount extends JPanel {
 		JButton createButton = new JButton("CREATE");
 		createButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				try {
+					BufferedWriter outStream = new BufferedWriter( new FileWriter("resources/login.txt",true));
+					PrintWriter printWriter = new PrintWriter(outStream);
+					printWriter.print(nameField.getText() + " ");
+					printWriter.print(passField.getText() + "\n");
+					printWriter.close();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				
+				
 				removeAll();
 				setLayout(new BorderLayout());
 				Login loginScreen = new Login();

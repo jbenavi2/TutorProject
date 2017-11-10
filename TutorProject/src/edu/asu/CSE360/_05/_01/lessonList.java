@@ -1,46 +1,25 @@
 package edu.asu.CSE360._05._01;
 
-import java.awt.BorderLayout;
-import java.awt.Container;
-import java.awt.Font;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
+import javax.swing.JList;
+import javax.swing.JComboBox;
+import javax.swing.JLabel;
+import javax.swing.JButton;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 
-/**
-
-* Description:
-* 	Creates the initial JPanel, there is a dropdown menu and go button. The user selects their lesson, then clicks
-* 	go to advance to the next scene.
-* Assignment number:
-* 	Recitation Project 3
-* Completion time:
-* 	2 Hours
-*
-* @author Andrew Bui
-* @version 1
-*/
+import java.awt.Font;
+import java.awt.GridBagLayout;
+import java.awt.BorderLayout;
+import javax.swing.border.EtchedBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class lessonList extends JPanel {
-
-	//button and drop down box
-	private JButton goButton;
-	private JComboBox lessonList;
-	//picture of gordon
-	private ImageIcon gordon1;
-	private JLabel gordonLabel;
 	
-	//acessor method to keep track of lesson choice
+	//assessor and mutator for lesson choice
 	public static int lessonChoice = 0;
 	public static void changeLessonChoice(int x) {
 		lessonChoice = x;
@@ -49,89 +28,98 @@ public class lessonList extends JPanel {
 	public static int checkLessonChoice() {
 		return lessonChoice;
 	}
-	
+	/**
+	 * Create the panel.
+	 */
+	@SuppressWarnings("unchecked")
 	public lessonList() {
-		//Drop down menu for lessons
-		String[] lessons = {"Select A Lesson...", "Basics of Cooking"};
-		JComboBox lessonList = new JComboBox(lessons);
-		lessonList.setSelectedIndex(0);
-		lessonList.setFont(new Font("Arial", Font.PLAIN,20));
-		((JLabel)lessonList.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
-
+		setBackground(Color.DARK_GRAY);
+		setLayout(null);
 		
-		//Button To Move to next screen
-		JButton goButton = new JButton("GO!");
-		goButton.setFont(new Font("Arial", Font.PLAIN,40));
-		
-		//picture of the very talented Gordon Ramsey
-		gordon1 = new ImageIcon("resources/gr1.png");
-		gordonLabel = new JLabel("", gordon1, JLabel.CENTER);
-		gordonLabel.setSize(getMinimumSize());
-		
-		//Jpanel holds drop down menu and "Go button"
-		JPanel chooseLessonPanel = new JPanel();
-		chooseLessonPanel.setLayout(new GridBagLayout());
-		GridBagConstraints c = new GridBagConstraints();
-		
-
-		
-		//lessons list
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.ipady = 40;
-		c.ipadx = 600;
-		c.gridx = 1;
-		c.gridy = 0;
-		c.insets = new Insets(0,275,0,300);
-		chooseLessonPanel.add(lessonList,c);
-		
-		//go Button
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.ipady = 50;
-		c.ipadx = 100;
-		c.gridx = 1;
-		c.gridy = 1;
-		c.insets = new Insets(50,475,0,500);
-		chooseLessonPanel.add(goButton, c);
-		
-		//gordon
-		c = new GridBagConstraints();
-		c.fill = GridBagConstraints.HORIZONTAL;
-		c.gridx = 1;
-		c.gridy = 2;
-		c.insets = new Insets(10,100,0,100);
-		chooseLessonPanel.add(gordonLabel, c);
-
-		
-		//Create JFrame to hold content and add close operation
-		setLayout(new BorderLayout());
-		add(chooseLessonPanel,BorderLayout.CENTER);
-		
-		//variable to hold choice
-		//action listener for drop down menu
+		JComboBox lessonList = new JComboBox();
 		lessonList.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent arg0) {
 				if (lessonList.getSelectedItem() == "Basics of Cooking") {
 					changeLessonChoice(1);
+				}
+				else if (lessonList.getSelectedItem() == "Eggs and Baking") {
+					changeLessonChoice(2);
+				}
+				else if (lessonList.getSelectedItem() == "Meat") {
+					changeLessonChoice(3);
 				}
 				else {
 					changeLessonChoice(0);
 				}
 			}
 		});
+		
+		lessonList.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
+		lessonList.setFont(new Font("Tahoma", Font.PLAIN, 21));
+		lessonList.setModel(new DefaultComboBoxModel(new String[] {"Select A Lesson...", "Basics of Cooking", "Eggs and Baking", "Meat"}));
+		((JLabel)lessonList.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
+
+		lessonList.setBounds(335, 103, 610, 104);
+		add(lessonList);
+		
+		JButton backButton = new JButton("BACK");
+		backButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (backButton.isEnabled()) {
+					removeAll();
+					setLayout(new BorderLayout());
+					TutorOptions tutorChoice = new TutorOptions();
+					add(tutorChoice, BorderLayout.CENTER);
+					revalidate();
+					repaint();
+				}
+			}
+		});
+		backButton.setBounds(10, 11, 89, 23);
+		add(backButton);
+		
+		JButton goButton = new JButton("GO!");
 		goButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (goButton.isEnabled()) {
 					if (checkLessonChoice() == 1) {
 						removeAll();
-						//revalidate/repaint
+						setLayout(new BorderLayout());
+						lessonChoicesBasics lessonPanel = new lessonChoicesBasics();
+						//add to frame
+						add(lessonPanel,BorderLayout.CENTER);
 						revalidate();
 						repaint();
-						lessonChoices lessonPanel = new lessonChoices();
-						//add to frame
-						add(lessonPanel);
+					}
+					else if (checkLessonChoice() == 2) {
+						removeAll();
+						setLayout(new BorderLayout());
+						lessonChoicesEggs lessonPanel = new lessonChoicesEggs();
+						add(lessonPanel,BorderLayout.CENTER);
+						revalidate();
+						repaint();
+					}
+					else if (checkLessonChoice() == 3) {
+						removeAll();
+						setLayout(new BorderLayout());
+						lessonChoicesMeat lessonPanel = new lessonChoicesMeat();
+						add(lessonPanel,BorderLayout.CENTER);
+						revalidate();
+						repaint();
 					}
 				}
 			}
 		});
+		goButton.setFont(new Font("Tahoma", Font.BOLD, 29));
+		goButton.setBounds(545, 333, 190, 54);
+		add(goButton);
+		
+		ImageIcon angelRamsay = new ImageIcon("resources/gr2.jpg");
+		JLabel godRamsay = new JLabel();
+		godRamsay.setIcon(angelRamsay);
+		godRamsay.setHorizontalAlignment(SwingConstants.CENTER);
+		godRamsay.setBounds(10, 333, 305, 377);
+		add(godRamsay);
+
 	}
 }
