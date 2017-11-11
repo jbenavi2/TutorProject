@@ -1,5 +1,19 @@
 package edu.asu.CSE360._05._01;
 
+/**
+
+* Description:
+* 	Creates a JPanel that has a dropbox of all the lessons and will direct the user to the chosen lesson
+* 	Plays music
+* Assignment number:
+* 	Recitation Project 4
+* Completion time:
+* 	1 Hours
+*
+* @author Andrew Bui
+* @version 1
+*/
+
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.JList;
@@ -86,7 +100,6 @@ public class lessonList extends JPanel {
 						removeAll();
 						setLayout(new BorderLayout());
 						lessonChoicesBasics lessonPanel = new lessonChoicesBasics();
-						//add to frame
 						add(lessonPanel,BorderLayout.CENTER);
 						revalidate();
 						repaint();

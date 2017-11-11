@@ -1,5 +1,19 @@
 package edu.asu.CSE360._05._01;
 
+/**
+
+* Description:
+* 	Creates a JPanel that is serves as a login screen for the program. Checks username and password with stored file. 
+* 	Plays music
+* Assignment number:
+* 	Recitation Project 4
+* Completion time:
+* 	2 Hours
+*
+* @author Andrew Bui
+* @version 1
+*/
+
 import javax.swing.JPanel;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -97,7 +111,6 @@ public class Login extends JPanel {
 			                "Error reading file '" 
 			                + fileName + "'");                  
 			        }
-
 				}
 			}
 		});

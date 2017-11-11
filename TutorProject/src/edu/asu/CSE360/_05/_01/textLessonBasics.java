@@ -14,7 +14,7 @@ import javax.swing.*;
 * 	JPanel that holds lesson info, the topic can be chosen with a button at the top. The user cannot edit the text.
 *   The Done button takes the user back to the lesson choices.
 * Assignment number:
-* 	Recitation Project 3
+* 	Recitation Project 4
 * Completion time:
 * 	1.5 Hours
 *
@@ -70,8 +70,8 @@ public class textLessonBasics extends JPanel {
  				if (doneButton.isEnabled()) {
  					removeAll();
 					setLayout(new BorderLayout());
-					lessonList chooseLesson = new lessonList();
-					add(chooseLesson, BorderLayout.CENTER);
+					lessonChoicesBasics lcb = new lessonChoicesBasics();
+					add(lcb, BorderLayout.CENTER);
 					revalidate();
 					repaint();
  				}

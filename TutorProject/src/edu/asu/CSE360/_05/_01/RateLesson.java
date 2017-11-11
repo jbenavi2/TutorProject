@@ -1,5 +1,19 @@
 package edu.asu.CSE360._05._01;
 
+/**
+
+* Description:
+* 	Creates a JPanel that allows a user to choose a lesson and rate the content. Stores and reads from external textfile
+* 	Plays music
+* Assignment number:
+* 	Recitation Project 4
+* Completion time:
+* 	2 Hours
+*
+* @author Andrew Bui
+* @version 1
+*/
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;

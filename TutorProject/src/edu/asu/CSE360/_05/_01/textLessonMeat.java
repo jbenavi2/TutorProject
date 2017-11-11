@@ -14,7 +14,7 @@ import javax.swing.*;
 * 	JPanel that holds lesson info, the topic can be chosen with a button at the top. The user cannot edit the text.
 *   The Done button takes the user back to the lesson choices.
 * Assignment number:
-* 	Recitation Project 3
+* 	Recitation Project 4
 * Completion time:
 * 	1.5 Hours
 *
@@ -66,8 +66,8 @@ public class textLessonMeat extends JPanel {
  				if (doneButton.isEnabled()) {
  					removeAll();
 					setLayout(new BorderLayout());
-					lessonList chooseLesson = new lessonList();
-					add(chooseLesson, BorderLayout.CENTER);
+					lessonChoicesMeat lcm = new lessonChoicesMeat();
+					add(lcm, BorderLayout.CENTER);
 					revalidate();
 					repaint();
  				}
@@ -84,7 +84,7 @@ public class textLessonMeat extends JPanel {
  							"The shoulders and legs (or shanks)\r\n" + 
  							"The middle area (loin and ribs)\r\n" + 
  							"The haunches (back thighs and legs)\r\n\n" + 
- 							"These main cuts break down into lots of smaller cuts — too many to mention individually! — but these are the major pieces usually found in American meat cases. And then there are the other, less common-cooked, cuts, like organ meat, tongue, tail, head, cheeks, and sweetbreads.");
+ 							"These main cuts break down into lots of smaller cuts  too many to mention individually! But these are the major pieces usually found in American meat cases. And then there are the other, less common-cooked, cuts, like organ meat, tongue, tail, head, cheeks, and sweetbreads.");
  				}
  			}
 		});
@@ -92,9 +92,9 @@ public class textLessonMeat extends JPanel {
 		cutButton.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
  				if (cutButton.isEnabled()) {
- 					textArea.setText("Tough Versus Tender Cuts: Picture a cow or a pig wandering around a pasture looking for food. The shoulders, haunches, and legs are getting all the workout — these big cuts are tough and lean as a result. The back gets much less of a workout, so the cuts from this middle area are generally more tender and fattier. Neither of these cuts is better than the other, but they do cook differently so it's important to be aware of the differences.\r\n" + 
+ 					textArea.setText("Tough Versus Tender Cuts: Picture a cow or a pig wandering around a pasture looking for food. The shoulders, haunches, and legs are getting all the workout  these big cuts are tough and lean as a result. The back gets much less of a workout, so the cuts from this middle area are generally more tender and fattier. Neither of these cuts is better than the other, but they do cook differently so it's important to be aware of the differences.\r\n" + 
  							"\r\n" + 
- 							"Tender, Quick-Cooking Cuts of Meat: Tender cuts from the back (loin) region of cows, pigs, and other animals are quick-cooking cuts. These are things like ribeye steak, sirloin steak, pork chops, and pork tenderloin — generally small, thin cuts that would serve one or two people. These cuts already tender and full of flavor, so they don't need much cooking to make them taste awesome. In fact, cooking these cuts too long makes the fat melt out and the muscle fibers seize up, making the meat dry, chewy, and tasteless. Use these quick-cooking cuts for fast preparations, like simple searing, stir fries, and other stovetop preparations.\n\n" +
+ 							"Tender, Quick-Cooking Cuts of Meat: Tender cuts from the back (loin) region of cows, pigs, and other animals are quick-cooking cuts. These are things like ribeye steak, sirloin steak, pork chops, and pork tenderloin generally small, thin cuts that would serve one or two people. These cuts already tender and full of flavor, so they don't need much cooking to make them taste awesome. In fact, cooking these cuts too long makes the fat melt out and the muscle fibers seize up, making the meat dry, chewy, and tasteless. Use these quick-cooking cuts for fast preparations, like simple searing, stir fries, and other stovetop preparations.\n\n" +
  							"Tough, Slow-Cooking Cuts of Meat: By contrast, tough cuts from the shoulders and rear of the animal will taste dry and chewy if you don't let them cook long enough. These are cuts like beef chuck, beef round roast, pork shoulder, and pork butt, and they are generally large cuts serving multiple people. These cuts need long, slow cooking in order to break down tough connective tissues and become tender and delicious. (We'll talk about this process in much more detail when we get to the lesson on Braising in a couple weeks.) Use these tougher cuts in braises, soups and stews, and roasts.\r\n" + 
  							"\r\n" + 
  							"Your Friend, The Butcher: If you are unsure whether a particular cut is meant for quick cooking or slow cooking when you're at the meat counter, or if you don't see the specific cut called for in your recipe, ask the butcher. They are your best resource for knowing how cuts will cook, what can be substituted, and many other meat-related questions. Don't be shy!");
@@ -105,15 +105,15 @@ public class textLessonMeat extends JPanel {
 		cookingButton.addActionListener(new ActionListener() {
  			public void actionPerformed(ActionEvent e) {
  				if (doneButton.isEnabled()) {
- 					textArea.setText("Preparing Meat for Cooking: Small tender cuts are generally ready to go straight from the package. Larger cuts often have a layer or patches of fat on the outside; you can trim these away with a sharp knife. Leave any fat marbled through the middle of the meat — that's where a lot of the best flavor comes in!\r\n" + 
+ 					textArea.setText("Preparing Meat for Cooking: Small tender cuts are generally ready to go straight from the package. Larger cuts often have a layer or patches of fat on the outside; you can trim these away with a sharp knife. Leave any fat marbled through the middle of the meat  that's where a lot of the best flavor comes in!\r\n" + 
  							"\r\n" + 
- 							"Searing Meat Before Cooking: Searing is almost always one of the first steps when cooking meat. In the case of steak, it's the only step! We sear meat for one purpose only: to give it flavor. Contrary to what you may have heard, searing does not seal in moisture or anything else — it simply caramelizes the outside of the meat, adding deep and roasty umami flavors to your dish. Use high heat and sear until you see a deep golden-brown crust on the outside of the meat.\n\n" +
+ 							"Searing Meat Before Cooking: Searing is almost always one of the first steps when cooking meat. In the case of steak, it's the only step! We sear meat for one purpose only: to give it flavor. Contrary to what you may have heard, searing does not seal in moisture or anything else it simply caramelizes the outside of the meat, adding deep and roasty umami flavors to your dish. Use high heat and sear until you see a deep golden-brown crust on the outside of the meat.\n\n" +
  							"Resting Meat After Cooking: Most meat also needs a period of resting after it's taken off the heat and before you slice into it. Usually, resting for 5 to 10 minutes is fine. During this time, moisture that was pulled to the surface during cooking settles back into the muscle fibers, keeping the meat juicy instead of tasting dry.\r\n" + 
  							"\r\n" + 
  							"Safe Cooking Temperatures: Safe minimum cooking temperatures as set by the US government are as follows:\r\n" + 
  							"\r\n" + 
- 							"Ground Beef, Pork, Lamb, and Other Meat: 160°F\r\n" + 
- 							"Whole Cuts of Beef, Pork, Lamb, and Other Meat: 145°F");
+ 							"Ground Beef, Pork, Lamb, and Other Meat: 160F\r\n" + 
+ 							"Whole Cuts of Beef, Pork, Lamb, and Other Meat: 145F");
  				}
  			}
 		});
