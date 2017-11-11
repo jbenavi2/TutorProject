@@ -1,5 +1,20 @@
 package edu.asu.CSE360._05._01;
 
+/**
+
+* Description:
+* 	CompanionPanel sets the companion of choice on a JPanel
+* 	use showYourself() to display the desired companion. 
+* 
+* Assignment number:
+* 	Recitation Project 4
+* Completion time:
+* 	1 Hours
+*
+* @author Javier Benavides
+* @version 1
+*/
+
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
