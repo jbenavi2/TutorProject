@@ -518,9 +518,68 @@ public class RevisedAssessor extends JPanel{
 			public void actionPerformed(ActionEvent event) {
 				removeAll();
 				setLayout(new BorderLayout());
-				//questionFive();
+				results(correct);
 			}
 		});
+	}
+	
+	public void results(double correct) {
+		
+		JLabel practiceResult = new JLabel("RESULTS");
+		practiceResult.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		//Generate a percent score
+		float percentage = ((float) correct/5)*100;
+		String grade = Float.toString(percentage)+"%";
+		JLabel showGrade = new JLabel(grade);
+		
+		//Generate avatar based on score
+		BasicCompanion basic = new BasicCompanion();
+		HappyCompanion happy = new HappyCompanion();
+		WorriedCompanion worried = new WorriedCompanion();
+		
+		if(percentage >= 70.0) {
+			happy.add(basic);
+			companion.setCompanion(happy);
+			companion.showYourself();
+			companion.updateUI();
+		}
+		else {
+			worried.add(basic);
+			companion.setCompanion(worried);
+			companion.showYourself();
+			companion.updateUI();
+		}
+		
+		//group grade and Avatar together
+		JPanel gradeAvatar = new JPanel();
+		gradeAvatar.setLayout(new GridLayout(1,2));
+		gradeAvatar.add(showGrade);
+		gradeAvatar.add(companion);
+		
+		JButton back = new JButton("BACK");
+		
+		entirePanel = new JPanel();
+		entirePanel.setLayout(new BoxLayout(entirePanel, BoxLayout.Y_AXIS));
+		entirePanel.add(practiceResult);
+		entirePanel.add(gradeAvatar);
+		entirePanel.add(back);
+		
+		add(entirePanel);
+		entirePanel.updateUI();
+		
+		back.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				if(back.isEnabled()) {
+					removeAll();
+					lessonList lesson = new lessonList();
+					add(lesson);
+					revalidate();
+					repaint();
+				}
+			}
+		});
+		
 	}
 
 }
