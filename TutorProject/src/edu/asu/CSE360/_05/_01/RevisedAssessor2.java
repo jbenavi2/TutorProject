@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
 
-public class RevisedAssessor extends JPanel{
+public class RevisedAssessor2 extends JPanel{
 	double correct = 0;		//keep score of questions answered correctly
 	double incorrect = 0;
 	double time;
@@ -19,12 +19,14 @@ public class RevisedAssessor extends JPanel{
 	
 	private JRadioButton RBoption1, RBoption2, RBoption3;
 	
+	private JTextField textfield;
+	
 	private JButton next, submit, goBack;
 	
 	
 	
 	//default constructor
-	public RevisedAssessor() {
+	public RevisedAssessor2() {
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);		
 		
@@ -81,26 +83,18 @@ public class RevisedAssessor extends JPanel{
 	
 	public void questionOne() {
 		//create question
-		labelQuestion = new JLabel("How do you put out a grease fire?");
+		labelQuestion = new JLabel("What is called \"Food of the gods\"?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
-		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("with water");
-		RBoption2 = new JRadioButton("smother with baking soda");
-		RBoption3 = new JRadioButton("blow on it");
-		
-		ButtonGroup group = new ButtonGroup();
-		group.add(RBoption1);
-		group.add(RBoption2);
-		group.add(RBoption3);
-		
+		//create textfield
+		textfield = new JTextField();
+		textfield.setAlignmentX(Component.CENTER_ALIGNMENT);
+						
 		//place questions and options in same panel
 		JPanel questionAnswer = new JPanel();
 		questionAnswer.setLayout(new BoxLayout(questionAnswer, BoxLayout.Y_AXIS));
 		questionAnswer.add(labelQuestion);
-		questionAnswer.add(RBoption1);
-		questionAnswer.add(RBoption2);
-		questionAnswer.add(RBoption3);
+		questionAnswer.add(textfield);
 		
 		//initiate companion
 		CompanionPanel companion2 = new CompanionPanel();
@@ -139,7 +133,10 @@ public class RevisedAssessor extends JPanel{
 		//add ActionListeners
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				if(RBoption2.isSelected()) {
+				
+				String text = textfield.getText();
+				String answer = "chocolate";
+				if(text.toLowerCase().equals(answer)) {
 					correct++;
 					HappyCompanion happy = new HappyCompanion();
 					happy.add(basic);
@@ -170,7 +167,7 @@ public class RevisedAssessor extends JPanel{
 	
 	public void questionTwo() {
 		//create question
-		labelQuestion = new JLabel("How are shrimps categorized?");
+		labelQuestion = new JLabel("Adding ");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
