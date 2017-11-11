@@ -3,7 +3,7 @@
 * 
 * stores correct, incorrect, and time of each lesson
 * 
-* Completion time: 10 hours
+* Completion time: 5 hours
 *
 * @author Javier Benavides
 * @version 1.0
