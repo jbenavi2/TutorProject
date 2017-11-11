@@ -8,7 +8,9 @@ import javax.swing.*;
 public class RevisedAssessor2 extends JPanel{
 	double correct = 0;		//keep score of questions answered correctly
 	double incorrect = 0;
-	double time;
+	double startTime = 0;
+	double stopTime = 0;
+	double totalTime = 0;
 	
 	private CompanionPanel companion;	
 	private JPanel entirePanel;
@@ -74,6 +76,7 @@ public class RevisedAssessor2 extends JPanel{
 		/*ADD ACTION LISTENER TO NEXT BUTTON*/
 		next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				startTime = System.currentTimeMillis();
 				removeAll();
 				setLayout(new BorderLayout());
 				questionOne();
@@ -510,18 +513,20 @@ public class RevisedAssessor2 extends JPanel{
 		});
 		next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				stopTime = System.currentTimeMillis();
+				totalTime = (stopTime - startTime) / 1000;
 				removeAll();
 				setLayout(new BorderLayout());
-				results(correct, incorrect);
+				results(correct, incorrect, totalTime);
 			}
 		});
 	}
 	
-	public void results(double correct, double incorrect) {
+	public void results(double correct, double incorrect, double time) {
 		
 		//initiate controlCenter
 		ControlCenter session = ControlCenter.getInstance();
-		session.lessonTwoInput(correct, incorrect);
+		session.lessonTwoInput(correct, incorrect, time);
 		
 		JLabel practiceResult = new JLabel("RESULTS");
 		practiceResult.setAlignmentX(Component.CENTER_ALIGNMENT);

@@ -1,14 +1,28 @@
+/*
+* Quiz 1
+* 
+* 
+* 
+* Completion time: 10 hours
+*
+* @author Javier Benavides
+* @version 1.0
+*/
+
 package edu.asu.CSE360._05._01;
 
 import java.awt.*;
 import java.awt.event.*;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
+import java.util.Timer;
 
 public class RevisedAssessor extends JPanel{
 	double correct = 0;		//keep score of questions answered correctly
 	double incorrect = 0;
-	double time;
+	double startTime = 0;
+	double stopTime = 0;
+	double totalTime = 0;
 	
 	private CompanionPanel companion;	
 	private JPanel entirePanel;
@@ -70,6 +84,7 @@ public class RevisedAssessor extends JPanel{
 		/*ADD ACTION LISTENER TO NEXT BUTTON*/
 		next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				startTime = System.currentTimeMillis();
 				removeAll();
 				setLayout(new BorderLayout());
 				questionOne();
@@ -517,18 +532,20 @@ public class RevisedAssessor extends JPanel{
 		});
 		next.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
+				stopTime = System.currentTimeMillis();
+				totalTime = (stopTime - startTime) / 1000;
 				removeAll();
 				setLayout(new BorderLayout());
-				results(correct, incorrect);
+				results(correct, incorrect, totalTime);
 			}
 		});
 	}
 	
-	public void results(double correct, double incorrect) {
+	public void results(double correct, double incorrect, double time) {
 		
 		//initiate controlCenter
 		ControlCenter session = ControlCenter.getInstance();
-		session.lessonOneInput(correct, incorrect);
+		session.lessonOneInput(correct, incorrect, time);
 		
 		JLabel practiceResult = new JLabel("RESULTS");
 		practiceResult.setAlignmentX(Component.CENTER_ALIGNMENT);
