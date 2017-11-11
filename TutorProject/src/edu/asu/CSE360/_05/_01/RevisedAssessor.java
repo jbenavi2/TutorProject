@@ -28,6 +28,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.concurrent.TimeUnit;
 import javax.swing.*;
+
+import java.util.ArrayList;
+import java.util.Observer;
 import java.util.Timer;
 
 public class RevisedAssessor extends JPanel{
@@ -48,12 +51,11 @@ public class RevisedAssessor extends JPanel{
 	
 	private JButton next, submit, goBack;
 	
-	
-	
 	//default constructor
 	public RevisedAssessor() {
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);		
+		
 		
 		labelQuestion = new JLabel("ARE YOU READY TO ENTER HELL'S KITCHEN?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -109,13 +111,13 @@ public class RevisedAssessor extends JPanel{
 	
 	public void questionOne() {
 		//create question
-		labelQuestion = new JLabel("How do you put out a grease fire?");
+		labelQuestion = new JLabel("What is the optimal ratio of rice to water?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("with water");
-		RBoption2 = new JRadioButton("smother with baking soda");
-		RBoption3 = new JRadioButton("blow on it");
+		RBoption1 = new JRadioButton("1:2");
+		RBoption2 = new JRadioButton("1:1");
+		RBoption3 = new JRadioButton("1:3");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -166,7 +168,7 @@ public class RevisedAssessor extends JPanel{
 		
 		//add ActionListeners
 		submit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
+			public void actionPerformed(ActionEvent event) {	
 				if(RBoption2.isSelected()) {
 					correct++;
 					HappyCompanion happy = new HappyCompanion();
@@ -198,13 +200,13 @@ public class RevisedAssessor extends JPanel{
 	
 	public void questionTwo() {
 		//create question
-		labelQuestion = new JLabel("How are shrimps categorized?");
+		labelQuestion = new JLabel("How much off the top should you cut from an Onion?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("By size");
-		RBoption2 = new JRadioButton("By expiration date");
-		RBoption3 = new JRadioButton("by quality");
+		RBoption1 = new JRadioButton("1/2 inch");
+		RBoption2 = new JRadioButton("1 inch");
+		RBoption3 = new JRadioButton("0 inch");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -287,13 +289,13 @@ public class RevisedAssessor extends JPanel{
 	
 	public void questionThree() {
 		//create question
-		labelQuestion = new JLabel("What oil has the highest smoking point?");
+		labelQuestion = new JLabel("How often should you sharpen your knives?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("Peanut Oil");
-		RBoption2 = new JRadioButton("Olive Oil");
-		RBoption3 = new JRadioButton("Avocado Oil");
+		RBoption1 = new JRadioButton("Never");
+		RBoption2 = new JRadioButton("Once a Year");
+		RBoption3 = new JRadioButton("Twice a Year");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -376,13 +378,13 @@ public class RevisedAssessor extends JPanel{
 	
 	public void questionFour() {
 		//create question
-		labelQuestion = new JLabel("When you poach something, you cook it with what?");
+		labelQuestion = new JLabel("How soon should fresh fish be cooked?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("Vegetables");
-		RBoption2 = new JRadioButton("Liquid");
-		RBoption3 = new JRadioButton("Oil");
+		RBoption1 = new JRadioButton("Within the Week");
+		RBoption2 = new JRadioButton("Within the Day");
+		RBoption3 = new JRadioButton("Within the Month");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -465,13 +467,13 @@ public class RevisedAssessor extends JPanel{
 	
 	public void questionFive() {
 		//create question
-		labelQuestion = new JLabel("What do you call the cook who makes sauces?");
+		labelQuestion = new JLabel("What texture should the pasta have?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("Sommelier");
-		RBoption2 = new JRadioButton("Saucier");
-		RBoption3 = new JRadioButton("Sauce Guy");
+		RBoption1 = new JRadioButton("Soft");
+		RBoption2 = new JRadioButton("Firm");
+		RBoption3 = new JRadioButton("Crunchy");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -616,5 +618,4 @@ public class RevisedAssessor extends JPanel{
 		});
 		
 	}
-
 }

@@ -107,7 +107,7 @@ public class RevisedAssessor3 extends JPanel{
 	
 	public void questionOne() {
 		//create question
-		labelQuestion = new JLabel("What is called \"Food of the gods\"?");
+		labelQuestion = new JLabel("What is the safe minimum cooking temperature for Ground Meat?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//create textfield
@@ -159,7 +159,7 @@ public class RevisedAssessor3 extends JPanel{
 			public void actionPerformed(ActionEvent event) {
 				
 				String text = textfield.getText();
-				String answer = "chocolate";
+				String answer = "160F";
 				if(text.toLowerCase().equals(answer)) {
 					correct++;
 					HappyCompanion happy = new HappyCompanion();
@@ -191,12 +191,12 @@ public class RevisedAssessor3 extends JPanel{
 	
 	public void questionTwo() {
 		//create question
-		labelQuestion = new JLabel("Adding white wine to the bottom of a pan that has brown bits is known as deglazing.");
+		labelQuestion = new JLabel("The safe minimum cooking temperature is the same for whole cuts of meat and ground meat.");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("True");
-		RBoption2 = new JRadioButton("False");
+		RBoption1 = new JRadioButton("False");
+		RBoption2 = new JRadioButton("True");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -277,14 +277,14 @@ public class RevisedAssessor3 extends JPanel{
 	
 	public void questionThree() {
 		//create question
-		labelQuestion = new JLabel("What things should you do before you start cooking? (select all that apply)");
+		labelQuestion = new JLabel("What happens when meat is seared?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//check boxes
-		chkBox1 = new JCheckBox("Wash your hands");
-		chkBox2 = new JCheckBox("Put on apron");
-		chkBox3 = new JCheckBox("Tie back long hair");
-		chkBox4 = new JCheckBox("Make sure equipment is clean");
+		chkBox1 = new JCheckBox("Gives the meat flavor");
+		chkBox2 = new JCheckBox("Caramelizes the outside of the meat");
+		chkBox3 = new JCheckBox("Creates a golden-brown crust");
+		chkBox4 = new JCheckBox("Seals in moisture");
 		
 				
 		//place questions and options in same panel
@@ -334,7 +334,7 @@ public class RevisedAssessor3 extends JPanel{
 		//add ActionListeners
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				if(chkBox1.isSelected() && chkBox2.isSelected() && chkBox3.isSelected() && chkBox4.isSelected()) {
+				if(chkBox1.isSelected() && chkBox2.isSelected() && chkBox3.isSelected() && !chkBox4.isSelected()) {
 					correct++;
 					HappyCompanion happy = new HappyCompanion();
 					happy.add(basic);
@@ -365,13 +365,13 @@ public class RevisedAssessor3 extends JPanel{
 	
 	public void questionFour() {
 		//create question
-		labelQuestion = new JLabel("What should you use to take something out of a hot oven?");
+		labelQuestion = new JLabel("How long should meat rest after it is cooked?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("Paper Towels");
-		RBoption2 = new JRadioButton("Your hands");
-		RBoption3 = new JRadioButton("Oven mitts");
+		RBoption1 = new JRadioButton("0 mins");
+		RBoption2 = new JRadioButton("15-30 mins");
+		RBoption3 = new JRadioButton("5-10 mins");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -454,14 +454,14 @@ public class RevisedAssessor3 extends JPanel{
 	
 	public void questionFive() {
 		//create question
-		labelQuestion = new JLabel("A whisk would be a good choice for completing which of these tasks? (select all that apply)");
+		labelQuestion = new JLabel("What are some Tough, Slow-cooking Cuts of Meat?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//create 4 checkboxes
-		chkBox1 = new JCheckBox("Mashing potatoes");
-		chkBox2 = new JCheckBox("Deboning a chicken");
-		chkBox3 = new JCheckBox("Mixing pancake batter");
-		chkBox4 = new JCheckBox("Scooping fritters from a deep fryer");
+		chkBox1 = new JCheckBox("Ribeye Steak");
+		chkBox2 = new JCheckBox("Pork Shoulder");
+		chkBox3 = new JCheckBox("Beef Chuck");
+		chkBox4 = new JCheckBox("Pork Chops");
 				
 		
 		//place questions and options in same panel
@@ -510,7 +510,7 @@ public class RevisedAssessor3 extends JPanel{
 		//add ActionListeners
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				if(!chkBox1.isSelected() && !chkBox2.isSelected() && chkBox3.isSelected() && !chkBox4.isSelected()) {
+				if(!chkBox1.isSelected() && chkBox2.isSelected() && chkBox3.isSelected() && !chkBox4.isSelected()) {
 					correct++;
 					HappyCompanion happy = new HappyCompanion();
 					happy.add(basic);
@@ -545,7 +545,7 @@ public class RevisedAssessor3 extends JPanel{
 		
 		//initiate controlCenter
 		ControlCenter session = ControlCenter.getInstance();
-		session.lessonTwoInput(correct, incorrect, time);
+		session.lessonThreeInput(correct, incorrect, time);
 		
 		JLabel practiceResult = new JLabel("RESULTS");
 		practiceResult.setAlignmentX(Component.CENTER_ALIGNMENT);

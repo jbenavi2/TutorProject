@@ -107,7 +107,7 @@ public class RevisedAssessor2 extends JPanel{
 	
 	public void questionOne() {
 		//create question
-		labelQuestion = new JLabel("What is called \"Food of the gods\"?");
+		labelQuestion = new JLabel("What eggs should you buy for baking and pastries?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//create textfield
@@ -159,7 +159,7 @@ public class RevisedAssessor2 extends JPanel{
 			public void actionPerformed(ActionEvent event) {
 				
 				String text = textfield.getText();
-				String answer = "chocolate";
+				String answer = "Large Chicken Eggs";
 				if(text.toLowerCase().equals(answer)) {
 					correct++;
 					HappyCompanion happy = new HappyCompanion();
@@ -191,12 +191,12 @@ public class RevisedAssessor2 extends JPanel{
 	
 	public void questionTwo() {
 		//create question
-		labelQuestion = new JLabel("Adding white wine to the bottom of a pan that has brown bits is known as deglazing.");
+		labelQuestion = new JLabel("Egg Yolks are an ingredient in Meringues, frostings, and macarons?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("True");
-		RBoption2 = new JRadioButton("False");
+		RBoption1 = new JRadioButton("False");
+		RBoption2 = new JRadioButton("True");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -277,14 +277,14 @@ public class RevisedAssessor2 extends JPanel{
 	
 	public void questionThree() {
 		//create question
-		labelQuestion = new JLabel("What things should you do before you start cooking? (select all that apply)");
+		labelQuestion = new JLabel("What are some properties of Egg Whites");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//check boxes
-		chkBox1 = new JCheckBox("Wash your hands");
-		chkBox2 = new JCheckBox("Put on apron");
-		chkBox3 = new JCheckBox("Tie back long hair");
-		chkBox4 = new JCheckBox("Make sure equipment is clean");
+		chkBox1 = new JCheckBox("Leavening Agent");
+		chkBox2 = new JCheckBox("Light and Airy");
+		chkBox3 = new JCheckBox("Used in marshmallows");
+		chkBox4 = new JCheckBox("Can be turned into foam");
 		
 				
 		//place questions and options in same panel
@@ -365,13 +365,13 @@ public class RevisedAssessor2 extends JPanel{
 	
 	public void questionFour() {
 		//create question
-		labelQuestion = new JLabel("What should you use to take something out of a hot oven?");
+		labelQuestion = new JLabel("At what temperature do eggs begin to Coagulate?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("Paper Towels");
-		RBoption2 = new JRadioButton("Your hands");
-		RBoption3 = new JRadioButton("Oven mitts");
+		RBoption1 = new JRadioButton("100F");
+		RBoption2 = new JRadioButton("190F");
+		RBoption3 = new JRadioButton("140F");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -454,14 +454,14 @@ public class RevisedAssessor2 extends JPanel{
 	
 	public void questionFive() {
 		//create question
-		labelQuestion = new JLabel("A whisk would be a good choice for completing which of these tasks? (select all that apply)");
+		labelQuestion = new JLabel("What are some dangers of cooking with eggs?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//create 4 checkboxes
-		chkBox1 = new JCheckBox("Mashing potatoes");
-		chkBox2 = new JCheckBox("Deboning a chicken");
-		chkBox3 = new JCheckBox("Mixing pancake batter");
-		chkBox4 = new JCheckBox("Scooping fritters from a deep fryer");
+		chkBox1 = new JCheckBox("Angering Chickens");
+		chkBox2 = new JCheckBox("Explosive Baked Goods");
+		chkBox3 = new JCheckBox("Cross contamination with other ingredients");
+		chkBox4 = new JCheckBox("Salmonella");
 				
 		
 		//place questions and options in same panel
@@ -510,7 +510,7 @@ public class RevisedAssessor2 extends JPanel{
 		//add ActionListeners
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				if(!chkBox1.isSelected() && !chkBox2.isSelected() && chkBox3.isSelected() && !chkBox4.isSelected()) {
+				if(!chkBox1.isSelected() && !chkBox2.isSelected() && chkBox3.isSelected() && chkBox4.isSelected()) {
 					correct++;
 					HappyCompanion happy = new HappyCompanion();
 					happy.add(basic);
