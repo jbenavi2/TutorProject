@@ -518,12 +518,16 @@ public class RevisedAssessor extends JPanel{
 			public void actionPerformed(ActionEvent event) {
 				removeAll();
 				setLayout(new BorderLayout());
-				results(correct);
+				results(correct, incorrect);
 			}
 		});
 	}
 	
-	public void results(double correct) {
+	public void results(double correct, double incorrect) {
+		
+		//initiate controlCenter
+		ControlCenter session = ControlCenter.getInstance();
+		session.lessonOneInput(correct, incorrect);
 		
 		JLabel practiceResult = new JLabel("RESULTS");
 		practiceResult.setAlignmentX(Component.CENTER_ALIGNMENT);
