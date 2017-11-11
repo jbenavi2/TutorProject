@@ -19,6 +19,8 @@ public class RevisedAssessor2 extends JPanel{
 	
 	private JRadioButton RBoption1, RBoption2, RBoption3;
 	
+	private JCheckBox chkBox1, chkBox2, chkBox3, chkBox4;
+	
 	private JTextField textfield;
 	
 	private JButton next, submit, goBack;
@@ -253,13 +255,101 @@ public class RevisedAssessor2 extends JPanel{
 	
 	public void questionThree() {
 		//create question
-		labelQuestion = new JLabel("What oil has the highest smoking point?");
+		labelQuestion = new JLabel("What things should you do before you start cooking? (select all that apply)");
+		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		//check boxes
+		chkBox1 = new JCheckBox("Wash your hands");
+		chkBox2 = new JCheckBox("Put on apron");
+		chkBox3 = new JCheckBox("Tie back long hair");
+		chkBox4 = new JCheckBox("Make sure equipment is clean");
+		
+				
+		//place questions and options in same panel
+		JPanel questionAnswer = new JPanel();
+		questionAnswer.setLayout(new BoxLayout(questionAnswer, BoxLayout.Y_AXIS));
+		questionAnswer.add(labelQuestion);
+		questionAnswer.add(chkBox1);
+		questionAnswer.add(chkBox2);
+		questionAnswer.add(chkBox3);
+		questionAnswer.add(chkBox4);
+
+		
+		//initiate companion
+		CompanionPanel companion2 = new CompanionPanel();
+		BasicCompanion basic = new BasicCompanion();
+		ThinkingCompanion thinking = new ThinkingCompanion();
+		
+		thinking.add(basic);
+		companion2.setCompanion(thinking);
+		companion2.showYourself();
+		
+		//panel to hold questions and avatar
+		JPanel questionAvatar = new JPanel();
+		questionAvatar.setLayout(new BoxLayout(questionAvatar, BoxLayout.X_AXIS));
+		
+		questionAvatar.add(questionAnswer);
+		questionAvatar.add(companion2);
+		
+		//create submit and next buttons
+		submit = new JButton("Submit");
+		next = new JButton("Next");
+		next.setEnabled(false);
+		JPanel buttonPanel = new JPanel();
+		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+		buttonPanel.add(submit);
+		buttonPanel.add(next);
+		
+		//put it all together
+		JPanel entirePanel = new JPanel();
+		entirePanel.setLayout(new BoxLayout(entirePanel, BoxLayout.Y_AXIS));
+		entirePanel.add(questionAvatar);
+		entirePanel.add(buttonPanel);
+		
+		add(entirePanel);
+		entirePanel.updateUI();
+		
+		//add ActionListeners
+		submit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				if(chkBox1.isSelected() && chkBox2.isSelected() && chkBox3.isSelected() && chkBox4.isSelected()) {
+					correct++;
+					HappyCompanion happy = new HappyCompanion();
+					happy.add(basic);
+					companion2.setCompanion(happy);
+					companion2.showYourself();
+					entirePanel.updateUI();
+				}
+				else {
+					incorrect++;
+					SorryCompanion sorry = new SorryCompanion();
+					sorry.add(basic);
+					companion2.setCompanion(sorry);
+					companion2.showYourself();
+					entirePanel.updateUI();
+				}
+				submit.setEnabled(false);
+				next.setEnabled(true);
+			}
+		});
+		next.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent event) {
+				removeAll();
+				setLayout(new BorderLayout());
+				questionFour();
+			}
+		});
+	}
+	
+	public void questionFour() {
+		//create question
+		labelQuestion = new JLabel("What should you use to take something out of a hot oven?");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("Peanut Oil");
-		RBoption2 = new JRadioButton("Olive Oil");
-		RBoption3 = new JRadioButton("Avocado Oil");
+		RBoption1 = new JRadioButton("Paper Towels");
+		RBoption2 = new JRadioButton("Your hands");
+		RBoption3 = new JRadioButton("Oven mitts");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
@@ -335,95 +425,6 @@ public class RevisedAssessor2 extends JPanel{
 			public void actionPerformed(ActionEvent event) {
 				removeAll();
 				setLayout(new BorderLayout());
-				questionFour();
-			}
-		});
-	}
-	
-	public void questionFour() {
-		//create question
-		labelQuestion = new JLabel("When you poach something, you cook it with what?");
-		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
-		
-		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("Vegetables");
-		RBoption2 = new JRadioButton("Liquid");
-		RBoption3 = new JRadioButton("Oil");
-		
-		ButtonGroup group = new ButtonGroup();
-		group.add(RBoption1);
-		group.add(RBoption2);
-		group.add(RBoption3);
-		
-		//place questions and options in same panel
-		JPanel questionAnswer = new JPanel();
-		questionAnswer.setLayout(new BoxLayout(questionAnswer, BoxLayout.Y_AXIS));
-		questionAnswer.add(labelQuestion);
-		questionAnswer.add(RBoption1);
-		questionAnswer.add(RBoption2);
-		questionAnswer.add(RBoption3);
-		
-		//initiate companion
-		CompanionPanel companion2 = new CompanionPanel();
-		BasicCompanion basic = new BasicCompanion();
-		ThinkingCompanion thinking = new ThinkingCompanion();
-		
-		thinking.add(basic);
-		companion2.setCompanion(thinking);
-		companion2.showYourself();
-		
-		//panel to hold questions and avatar
-		JPanel questionAvatar = new JPanel();
-		questionAvatar.setLayout(new BoxLayout(questionAvatar, BoxLayout.X_AXIS));
-		
-		questionAvatar.add(questionAnswer);
-		questionAvatar.add(companion2);
-		
-		//create submit and next buttons
-		submit = new JButton("Submit");
-		next = new JButton("Next");
-		next.setEnabled(false);
-		JPanel buttonPanel = new JPanel();
-		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
-		buttonPanel.add(submit);
-		buttonPanel.add(next);
-		
-		//put it all together
-		JPanel entirePanel = new JPanel();
-		entirePanel.setLayout(new BoxLayout(entirePanel, BoxLayout.Y_AXIS));
-		entirePanel.add(questionAvatar);
-		entirePanel.add(buttonPanel);
-		
-		add(entirePanel);
-		entirePanel.updateUI();
-		
-		//add ActionListeners
-		submit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				if(RBoption2.isSelected()) {
-					correct++;
-					HappyCompanion happy = new HappyCompanion();
-					happy.add(basic);
-					companion2.setCompanion(happy);
-					companion2.showYourself();
-					entirePanel.updateUI();
-				}
-				else {
-					incorrect++;
-					SorryCompanion sorry = new SorryCompanion();
-					sorry.add(basic);
-					companion2.setCompanion(sorry);
-					companion2.showYourself();
-					entirePanel.updateUI();
-				}
-				submit.setEnabled(false);
-				next.setEnabled(true);
-			}
-		});
-		next.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent event) {
-				removeAll();
-				setLayout(new BorderLayout());
 				questionFive();
 			}
 		});
@@ -431,26 +432,24 @@ public class RevisedAssessor2 extends JPanel{
 	
 	public void questionFive() {
 		//create question
-		labelQuestion = new JLabel("What do you call the cook who makes sauces?");
+		labelQuestion = new JLabel("A whisk would be a good choice for completing which of these tasks? (select all that apply)");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
-		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("Sommelier");
-		RBoption2 = new JRadioButton("Saucier");
-		RBoption3 = new JRadioButton("Sauce Guy");
-		
-		ButtonGroup group = new ButtonGroup();
-		group.add(RBoption1);
-		group.add(RBoption2);
-		group.add(RBoption3);
+		//create 4 checkboxes
+		chkBox1 = new JCheckBox("Mashing potatoes");
+		chkBox2 = new JCheckBox("Deboning a chicken");
+		chkBox3 = new JCheckBox("Mixing pancake batter");
+		chkBox4 = new JCheckBox("Scooping fritters from a deep fryer");
+				
 		
 		//place questions and options in same panel
 		JPanel questionAnswer = new JPanel();
 		questionAnswer.setLayout(new BoxLayout(questionAnswer, BoxLayout.Y_AXIS));
 		questionAnswer.add(labelQuestion);
-		questionAnswer.add(RBoption1);
-		questionAnswer.add(RBoption2);
-		questionAnswer.add(RBoption3);
+		questionAnswer.add(chkBox1);
+		questionAnswer.add(chkBox2);
+		questionAnswer.add(chkBox3);
+		questionAnswer.add(chkBox4);
 		
 		//initiate companion
 		CompanionPanel companion2 = new CompanionPanel();
@@ -489,7 +488,7 @@ public class RevisedAssessor2 extends JPanel{
 		//add ActionListeners
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent event) {
-				if(RBoption2.isSelected()) {
+				if(!chkBox1.isSelected() && !chkBox2.isSelected() && chkBox3.isSelected() && !chkBox4.isSelected()) {
 					correct++;
 					HappyCompanion happy = new HappyCompanion();
 					happy.add(basic);
