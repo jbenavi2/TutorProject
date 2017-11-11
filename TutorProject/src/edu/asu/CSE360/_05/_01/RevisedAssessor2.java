@@ -521,7 +521,7 @@ public class RevisedAssessor2 extends JPanel{
 		
 		//initiate controlCenter
 		ControlCenter session = ControlCenter.getInstance();
-		session.lessonOneInput(correct, incorrect);
+		session.lessonTwoInput(correct, incorrect);
 		
 		JLabel practiceResult = new JLabel("RESULTS");
 		practiceResult.setAlignmentX(Component.CENTER_ALIGNMENT);

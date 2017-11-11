@@ -64,14 +64,19 @@ public class viewProfile extends JPanel {
 		backButton.setBounds(10, 11, 89, 23);
 		add(backButton);
 		
-		JLabel lblNewLabel = new JLabel("CORRECT: ");
+		ControlCenter session = ControlCenter.getInstance();
+		double lessonOneCorrect = session.getLessonOneCorrect();
+		
+		JLabel lblNewLabel = new JLabel("CORRECT: " + lessonOneCorrect);
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel.setBounds(525, 334, 230, 41);
 		add(lblNewLabel);
 		
-		JLabel lblIncorrect = new JLabel("INCORRECT: ");
+		double lessonOneIncorrect = session.getLessonOneIncorrect();
+		
+		JLabel lblIncorrect = new JLabel("INCORRECT: " + lessonOneIncorrect);
 		lblIncorrect.setForeground(Color.WHITE);
 		lblIncorrect.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIncorrect.setFont(new Font("Tahoma", Font.PLAIN, 20));

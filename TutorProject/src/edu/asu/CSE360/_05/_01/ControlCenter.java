@@ -24,5 +24,28 @@ public class ControlCenter {
 		correct[0] = correctInput;
 		incorrect[0] = incorrectInput;
 	}
+	
+	public double getLessonOneCorrect() {
+		return correct[0];
+	}
+	
+	public double getLessonOneIncorrect() {
+		return incorrect[0];
+	}
+	
+	public void lessonTwoInput(double correctInput, double incorrectInput) {
+		
+		correct[1] = correctInput;
+		incorrect[2] = incorrectInput;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
