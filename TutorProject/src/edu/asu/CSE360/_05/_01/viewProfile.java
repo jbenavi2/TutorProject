@@ -31,24 +31,84 @@ import java.awt.event.ActionEvent;
 
 public class viewProfile extends JPanel {
 
-	/**
-	 * Create the panel.
-	 */
 	public viewProfile() {
 		setBackground(Color.DARK_GRAY);
 		setBorder(new BevelBorder(BevelBorder.RAISED, null, null, null, null));
 		setLayout(null);
 		
-		JComboBox selectLesson = new JComboBox();
-		selectLesson.setModel(new DefaultComboBoxModel(new String[] {"Select a Lesson...", "Basics of Cooking"}));
-		selectLesson.setBounds(511, 72, 257, 20);
-		add(selectLesson);
+		//label shows # correct answers for lesson
+		JLabel correctLabel = new JLabel("CORRECT: -");
+		correctLabel.setForeground(Color.WHITE);
+		correctLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		correctLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		correctLabel.setBounds(525, 334, 230, 41);
+		add(correctLabel);
 		
+		//label shows number of incorrect answers for a lesson
+		JLabel incorrectLabel = new JLabel("INCORRECT: -");
+		incorrectLabel.setForeground(Color.WHITE);
+		incorrectLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		incorrectLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		incorrectLabel.setBounds(525, 408, 230, 41);
+		add(incorrectLabel);
+		
+		//label shows time taken to complete lesson
+		JLabel timeLabel = new JLabel("TIME: -");
+		timeLabel.setForeground(Color.WHITE);
+		timeLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		timeLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		timeLabel.setBounds(525, 486, 230, 41);
+		add(timeLabel);
+		
+		//progress bar that shows percentage of correct answers
 		JProgressBar progressBar = new JProgressBar();
-		progressBar.setValue(50);
+		progressBar.setMaximum(5);
 		progressBar.setBounds(271, 189, 737, 78);
 		add(progressBar);
 		
+		//dropdown menu to select which lesson stats to show. Uses Singleton.
+		JComboBox selectLesson = new JComboBox();
+		selectLesson.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (selectLesson.getSelectedItem() == "Basics of Cooking") {
+					ControlCenter session = ControlCenter.getInstance();
+					double lessonOneCorrect = session.getLessonOneCorrect();
+					double lessonOneIncorrect = session.getLessonOneIncorrect();
+					double lessonOneTime = session.getLessonOneTime();
+					correctLabel.setText("CORRECT: " + lessonOneCorrect);
+					incorrectLabel.setText("INCORRECT: " + lessonOneIncorrect);
+					timeLabel.setText("TIME: " + lessonOneTime);
+					progressBar.setValue((int)lessonOneCorrect);
+
+				}
+				if (selectLesson.getSelectedItem() == "Eggs and Baking") {
+					ControlCenter session = ControlCenter.getInstance();
+					double lessonTwoCorrect = session.getLessonTwoCorrect();
+					double lessonTwoIncorrect = session.getLessonTwoIncorrect();
+					double lessonTwoTime = session.getLessonTwoTime();
+					correctLabel.setText("CORRECT: " + lessonTwoCorrect);
+					incorrectLabel.setText("INCORRECT: " + lessonTwoIncorrect);
+					timeLabel.setText("TIME: " + lessonTwoTime);
+					progressBar.setValue((int)lessonTwoCorrect);
+				}
+				if (selectLesson.getSelectedItem() == "Meat"){
+					ControlCenter session = ControlCenter.getInstance();
+					double lessonThreeCorrect = session.getLessonThreeCorrect();
+					double lessonThreeIncorrect = session.getLessonThreeIncorrect();
+					double lessonThreeTime = session.getLessonThreeTime();
+					correctLabel.setText("CORRECT: " + lessonThreeCorrect);
+					incorrectLabel.setText("INCORRECT: " + lessonThreeIncorrect);
+					timeLabel.setText("TIME: " + lessonThreeTime);
+					progressBar.setValue((int)lessonThreeCorrect);
+				}
+			}
+		});
+		//drop down menu of all lessons
+		selectLesson.setModel(new DefaultComboBoxModel(new String[] {"Select a Lesson...", "Basics of Cooking", "Eggs and Baking", "Meat"}));
+		selectLesson.setBounds(511, 72, 257, 20);
+		add(selectLesson);
+		
+		//back button - go back to tutor options
 		JButton backButton = new JButton("BACK");
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -63,32 +123,5 @@ public class viewProfile extends JPanel {
 		backButton.setFont(new Font("Tahoma", Font.BOLD, 11));
 		backButton.setBounds(10, 11, 89, 23);
 		add(backButton);
-		
-		ControlCenter session = ControlCenter.getInstance();
-		double lessonOneCorrect = session.getLessonOneCorrect();
-		
-		JLabel lblNewLabel = new JLabel("CORRECT: " + lessonOneCorrect);
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel.setBounds(525, 334, 230, 41);
-		add(lblNewLabel);
-		
-		double lessonOneIncorrect = session.getLessonOneIncorrect();
-		
-		JLabel lblIncorrect = new JLabel("INCORRECT: " + lessonOneIncorrect);
-		lblIncorrect.setForeground(Color.WHITE);
-		lblIncorrect.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIncorrect.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblIncorrect.setBounds(525, 408, 230, 41);
-		add(lblIncorrect);
-		
-		JLabel lblTime = new JLabel("TIME: ");
-		lblTime.setForeground(Color.WHITE);
-		lblTime.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTime.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTime.setBounds(525, 486, 230, 41);
-		add(lblTime);
-
 	}
 }

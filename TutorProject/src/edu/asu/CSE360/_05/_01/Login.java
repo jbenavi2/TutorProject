@@ -46,15 +46,12 @@ public class Login extends JPanel {
 	private JTextField usernameField;
 	private JPasswordField passwordField;
 
-	/**
-	 * Create the panel.
-	 */
 	public Login() {
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		String fileName = "resources/login.txt";
 
-		
+		//enter username
 		usernameField = new JTextField();
 		usernameField.addMouseListener(new MouseAdapter() {
 			@Override
@@ -62,12 +59,12 @@ public class Login extends JPanel {
 				usernameField.setText("");
 			}
 		});
-
 		usernameField.setHorizontalAlignment(SwingConstants.CENTER);
 		usernameField.setText("USERNAME");
 		usernameField.setBounds(516, 249, 248, 43);
 		add(usernameField);
 		
+		//enter password
 		passwordField = new JPasswordField();
 		passwordField.addMouseListener(new MouseAdapter() {
 			@Override
@@ -80,6 +77,7 @@ public class Login extends JPanel {
 		passwordField.setBounds(516, 315, 248, 43);
 		add(passwordField);
 		
+		//attempt to login. Checks if info is valid. Only allows registered accounts in
 		JButton loginButton = new JButton("LOGIN");
 		loginButton.setBackground(UIManager.getColor("Button.darkShadow"));
 		loginButton.addActionListener(new ActionListener() {
@@ -117,6 +115,7 @@ public class Login extends JPanel {
 		loginButton.setBounds(529, 400, 222, 62);
 		add(loginButton);
 		
+		//go to account creation
 		JButton createAccount = new JButton("Create Account");
 		createAccount.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -135,31 +134,31 @@ public class Login extends JPanel {
 		createAccount.setBounds(542, 621, 195, 23);
 		add(createAccount);
 		
+		//Title
 		JLabel titleLabel = new JLabel("DRAG ME TO HELL'S KITCHEN");
 		titleLabel.setForeground(Color.WHITE);
 		titleLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
 		titleLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		titleLabel.setBounds(235, 31, 809, 100);
 		add(titleLabel);
-		
-		
-		ImageIcon torch = new ImageIcon("resources/torch.gif");
-		
-		JLabel torch1 = new JLabel();
-		torch1.setIcon(torch);
-		torch1.setBounds(10, 429, 331, 320);
-		add(torch1);
-		
-		JLabel torch2 = new JLabel();
-		torch2.setIcon(torch);
-		torch2.setBounds(939, 429, 331, 320);
-		add(torch2);
-		
 		JLabel lblaCooking = new JLabel("- A Cooking Tutor featuring Gordon Ramsay");
 		lblaCooking.setForeground(Color.WHITE);
 		lblaCooking.setHorizontalAlignment(SwingConstants.CENTER);
 		lblaCooking.setBounds(482, 117, 315, 14);
 		add(lblaCooking);
+		
+		//torches for flavor
+		ImageIcon torch = new ImageIcon("resources/torch.gif");
+		JLabel torch1 = new JLabel();
+		torch1.setIcon(torch);
+		torch1.setBounds(10, 429, 331, 320);
+		add(torch1);
+		JLabel torch2 = new JLabel();
+		torch2.setIcon(torch);
+		torch2.setBounds(939, 429, 331, 320);
+		add(torch2);
+		
+
 		
 
 		

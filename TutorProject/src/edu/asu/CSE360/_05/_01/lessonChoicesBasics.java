@@ -25,13 +25,11 @@ import java.awt.Color;
 
 public class lessonChoicesBasics extends JPanel {
 
-	/**
-	 * Create the panel.
-	 */
 	public lessonChoicesBasics() {
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
+		//back button. go to lesson list
 		JButton backButton = new JButton("BACK");
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -46,6 +44,7 @@ public class lessonChoicesBasics extends JPanel {
 		backButton.setBounds(10, 11, 89, 23);
 		add(backButton);
 		
+		//go to lesson
 		JButton learnButton = new JButton("LEARN!");
 		learnButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -63,6 +62,7 @@ public class lessonChoicesBasics extends JPanel {
 		learnButton.setBounds(68, 268, 335, 184);
 		add(learnButton);
 		
+		// go to assessments
 		JButton assButton = new JButton("ASSESSMENTS");
 		assButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -79,6 +79,7 @@ public class lessonChoicesBasics extends JPanel {
 		assButton.setBounds(471, 268, 335, 184);
 		add(assButton);
 		
+		// generate recipe
 		JButton recipeButton = new JButton("GIVE ME A RECIPE!");
 		recipeButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -95,6 +96,5 @@ public class lessonChoicesBasics extends JPanel {
 		recipeButton.setFont(new Font("Tahoma", Font.BOLD, 30));
 		recipeButton.setBounds(874, 268, 335, 184);
 		add(recipeButton);
-
 	}
 }

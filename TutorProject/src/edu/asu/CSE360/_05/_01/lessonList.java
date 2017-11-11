@@ -42,14 +42,13 @@ public class lessonList extends JPanel {
 	public static int checkLessonChoice() {
 		return lessonChoice;
 	}
-	/**
-	 * Create the panel.
-	 */
+
 	@SuppressWarnings("unchecked")
 	public lessonList() {
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
+		//list of all lessons
 		JComboBox lessonList = new JComboBox();
 		lessonList.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -67,15 +66,14 @@ public class lessonList extends JPanel {
 				}
 			}
 		});
-		
 		lessonList.setBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null));
 		lessonList.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		lessonList.setModel(new DefaultComboBoxModel(new String[] {"Select A Lesson...", "Basics of Cooking", "Eggs and Baking", "Meat"}));
 		((JLabel)lessonList.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
-
 		lessonList.setBounds(335, 103, 610, 104);
 		add(lessonList);
 		
+		//back button - go back to tutor options
 		JButton backButton = new JButton("BACK");
 		backButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -92,6 +90,7 @@ public class lessonList extends JPanel {
 		backButton.setBounds(10, 11, 89, 23);
 		add(backButton);
 		
+		//go to selected lesson
 		JButton goButton = new JButton("GO!");
 		goButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -127,6 +126,7 @@ public class lessonList extends JPanel {
 		goButton.setBounds(545, 333, 190, 54);
 		add(goButton);
 		
+		//eye-candy of gordon ramsay
 		ImageIcon angelRamsay = new ImageIcon("resources/gr2.jpg");
 		JLabel godRamsay = new JLabel();
 		godRamsay.setIcon(angelRamsay);

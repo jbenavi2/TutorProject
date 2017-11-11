@@ -46,13 +46,11 @@ import java.io.PrintWriter;
 public class RateLesson extends JPanel {
 	private JTextField commentField;
 
-	/**
-	 * Create the panel.
-	 */
 	public RateLesson() {
 		setLayout(null);
-		
 		String fileName = "resources/review.txt";
+		
+		//create textarea for reviews. Read from textfile to populate area
 		JTextArea reviewText = new JTextArea();
 		reviewText.setText("Basics of Cooking - 3 stars - It was aight...\r\nBasics of Cooking - 5 stars - Me cook good now!\r\n");
 		reviewText.setEditable(false);
@@ -77,16 +75,18 @@ public class RateLesson extends JPanel {
                 "Error reading file '" 
                 + fileName + "'");                  
         }
-		
+		//add scrollbar to text area
 		JScrollPane scroll = new JScrollPane(reviewText, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		scroll.setBounds(62, 45, 1163, 453);
 		add(scroll);
 		
+		//lesson selection
 		JComboBox lessonChoice = new JComboBox();
-		lessonChoice.setModel(new DefaultComboBoxModel(new String[] {"Select Lesson...", "Basics of Cooking", "Eggs and Baking"}));
+		lessonChoice.setModel(new DefaultComboBoxModel(new String[] {"Select Lesson...", "Basics of Cooking", "Eggs and Baking", "Meat"}));
 		lessonChoice.setBounds(89, 521, 209, 45);
 		add(lessonChoice);
 		
+		//slider for rating
 		JSlider slider = new JSlider();
 		slider.setValue(0);
 		slider.setMajorTickSpacing(1);
@@ -94,9 +94,9 @@ public class RateLesson extends JPanel {
 		slider.setPaintLabels(true);
 		slider.setMaximum(5);
 		slider.setBounds(383, 521, 234, 45);
-		
 		add(slider);
 		
+		//add comment
 		commentField = new JTextField();
 		commentField.addMouseListener(new MouseAdapter() {
 			@Override
@@ -110,6 +110,7 @@ public class RateLesson extends JPanel {
 		add(commentField);
 		commentField.setColumns(10);
 		
+		//back btn - go back to tutor options
 		JButton btnBack = new JButton("BACK");
 		btnBack.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -124,6 +125,7 @@ public class RateLesson extends JPanel {
 		btnBack.setBounds(10, 11, 89, 23);
 		add(btnBack);
 		
+		//add review. only add if lesson selected and comment made
 		JButton addButton = new JButton("ADD REVIEW");
 		addButton.setFont(new Font("Tahoma", Font.BOLD, 20));
 		addButton.addActionListener(new ActionListener() {
@@ -155,6 +157,7 @@ public class RateLesson extends JPanel {
 		addButton.setBounds(554, 611, 179, 45);
 		add(addButton);
 		
+		//slider labels
 		JLabel lblBad = new JLabel("BAD");
 		lblBad.setHorizontalAlignment(SwingConstants.CENTER);
 		lblBad.setBounds(367, 577, 46, 14);

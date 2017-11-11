@@ -50,14 +50,11 @@ public class Universe extends JFrame
 //		}
 //         
 		
-		
-		//initial State - Choose Lesson
-		//content.setLayout(new GridBagLayout());
-		//lessonList chooseLesson = new lessonList();
+		//initial State - Login Screen
 		Login loginScreen = new Login();
 		content.add(loginScreen);
 		
-		//set frame size and visible
+		//set frame size and visible. lock size.
 		frame.setSize(1280,720);
 		frame.setResizable(false);
 		frame.setVisible(true);

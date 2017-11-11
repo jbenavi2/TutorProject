@@ -36,10 +36,7 @@ public class createAccount extends JPanel {
 	private JTextField nameField;
 	private JTextField passField;
 
-	/**
-	 * Create the panel.
-	 * @return 
-	 */
+	//function check if input is 1 word. used to check username and password
 	private boolean isOneWord(String string) {
 		String[] split = string.split("\\s+");
 		if (split.length > 1) {
@@ -50,20 +47,24 @@ public class createAccount extends JPanel {
 		}
 	}
 	
+	//Jpanel that allows creation of account
 	public createAccount(){
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
 		
+		//enter username
 		nameField = new JTextField();
 		nameField.setBounds(527, 117, 225, 39);
 		add(nameField);
 		nameField.setColumns(10);
 		
+		//enter password
 		passField = new JTextField();
 		passField.setColumns(10);
 		passField.setBounds(527, 306, 225, 39);
 		add(passField);
 		
+		//username label
 		JLabel userName = new JLabel("Username:");
 		userName.setForeground(Color.WHITE);
 		userName.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -71,6 +72,7 @@ public class createAccount extends JPanel {
 		userName.setBounds(552, 80, 175, 25);
 		add(userName);
 		
+		//password label
 		JLabel passwordLabel = new JLabel("Password:");
 		passwordLabel.setForeground(Color.WHITE);
 		passwordLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -78,6 +80,7 @@ public class createAccount extends JPanel {
 		passwordLabel.setBounds(552, 274, 175, 25);
 		add(passwordLabel);
 		
+		//create button. Checks if input is valid. Will only create once all inputs are valid. Not empty, no spaces
 		JButton createButton = new JButton("CREATE");
 		createButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -107,6 +110,7 @@ public class createAccount extends JPanel {
 		createButton.setBounds(552, 484, 175, 70);
 		add(createButton);
 		
+		//account creation info
 		JTextArea txtrMustFillIn = new JTextArea();
 		txtrMustFillIn.setText("Must fill in all fields\r\nAll characters allowed except spaces\r\nLagging and leading spaces will be trimmed\r\n");
 		txtrMustFillIn.setBounds(10, 11, 298, 61);

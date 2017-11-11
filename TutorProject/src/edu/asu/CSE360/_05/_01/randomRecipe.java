@@ -30,9 +30,6 @@ import java.util.Random;
 
 public class randomRecipe extends JPanel {
 
-	/**
-	 * Create the panel.
-	 */
 	public randomRecipe(int x) {
 		setBackground(Color.DARK_GRAY);
 		setLayout(null);
@@ -44,8 +41,6 @@ public class randomRecipe extends JPanel {
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setBounds(81, 53, 1067, 630);
-
-
 		
 		//Recipe Bank
 		List<String> Recipes = new ArrayList<String>();
@@ -130,8 +125,8 @@ public class randomRecipe extends JPanel {
 		
 		String r5 = "Bejeweled Rice\r\n\n" + 
 				"Ingredients\r\n" + 
-				"⅓ cup unsalted, shelled pistachios\r\n" + 
-				"⅓ cup slivered almonds\r\n" + 
+				"1 cup unsalted, shelled pistachios\r\n" + 
+				"1 cup slivered almonds\r\n" + 
 				"4 tablespoons extra-virgin olive oil, divided\r\n" + 
 				"2 large carrots, peeled, thinly sliced into rounds on a mandolin\r\n" + 
 				"2 teaspoons sugar\r\n" + 
@@ -139,35 +134,36 @@ public class randomRecipe extends JPanel {
 				"8 scallions, dark green parts and white parts separated, thinly sliced\r\n" + 
 				"3 garlic cloves, thinly sliced\r\n" + 
 				"3 cups long-grain rice, rinsed\r\n" + 
-				"¾ teaspoon crushed red pepper flakes\r\n" + 
-				"¾ teaspoon ground cardamom\r\n" + 
-				"¾ teaspoon ground cinnamon\r\n" + 
-				"¾ teaspoon ground turmeric\r\n" + 
+				"1 teaspoon crushed red pepper flakes\r\n" + 
+				"1 teaspoon ground cardamom\r\n" + 
+				"1 teaspoon ground cinnamon\r\n" + 
+				"1 teaspoon ground turmeric\r\n" + 
 				"4 tablespoons unsalted butter, cut into pieces\r\n" + 
 				"2 teaspoons finely grated orange zest\r\n" + 
 				"1 cup mixed unsweetened dried fruit (such as golden raisins,\r\n" + 
 				"cranberries, and/or sour cherries)\r\n" + 
 				"Preparation\r\n" + 
-				"Preheat oven to 350°. Arrange pistachios and almonds on opposite\r\n" + 
+				"Preheat oven to 350F. Arrange pistachios and almonds on opposite\r\n" + 
 				"sides of a rimmed baking sheet and toast, shaking pan gently halfway\r\n" + 
 				"through, until almonds are golden brown and pistachios are slightly\r\n" + 
-				"darkened, 6–8 minutes. Let cool, then coarsely chop pistachios.\r\n" + 
+				"darkened, 6-8 minutes. Let cool, then coarsely chop pistachios.\r\n" + 
 				"Meanwhile, heat 1 Tbsp. oil in a large heavy pot over medium.\r\n" + 
 				"Cook carrots, stirring occasionally, until softened but haven't taken on\r\n" + 
-				"any color, 8–10 minutes. Stir in sugar and a pinch of salt and cook\r\n" + 
+				"any color, 8-10 minutes. Stir in sugar and a pinch of salt and cook\r\n" + 
 				"until sugar dissolves, about 1 minute more. Transfer carrot mixture to\r\n" + 
 				"a medium bowl.\r\n" + 
 				"Heat remaining 3 Tbsp. oil in same pot over medium. Cook scallion\r\n" + 
-				"whites and garlic, stirring occasionally, until softened, 4–6 minutes.\r\n" + 
+				"whites and garlic, stirring occasionally, until softened, 4-6 minutes.\r\n" + 
 				"Stir in rice, red pepper flakes, cardamom, cinnamon, and turmeric;\r\n" + 
 				"cook, stirring often, until some grains are translucent, about 3 minutes.\r\n" + 
-				"Add 3¾ cups water, season with 1 Tbsp. salt, and bring to a boil.\r\n" + 
+				"Add 3 cups water, season with 1 Tbsp. salt, and bring to a boil.\r\n" + 
 				"Reduce heat to medium-low, cover, and simmer until rice is tender,\r\n" + 
-				"15–18 minutes. Remove from heat, add butter and orange zest, and\r\n" + 
+				"15-18 minutes. Remove from heat, add butter and orange zest, and\r\n" + 
 				"fluff rice with a fork. Cover pot and let rice steam 10 minutes.\r\n" + 
 				"Spoon pilaf onto a platter. Top with neatly defined rows of dried fruit,\r\n" + 
 				"almonds, pistachios, carrots, and scallion greens.";
 		
+		//add to arraylist of recipes
 		Recipes.add(r1);
 		Recipes.add(r2);
 		Recipes.add(r3);
