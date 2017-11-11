@@ -1,15 +1,28 @@
-/*
-* Quiz 1
-* 
-* 
-* 
-* Completion time: 10 hours
-*
-* @author Javier Benavides
-* @version 1.0
-*/
+
 
 package edu.asu.CSE360._05._01;
+
+/**
+
+* Description:
+* 	First Quiz.  Uses Combination of Multiple Choice, T/F, Multiple Answers, and 
+* 	single response type questions
+* 	
+* 	An animated companion provides feedback
+* 
+* 	Immediate grade at end of quiz
+* 
+* 	correct and incorrect answers as well as time spend on quiz are stored in 
+* 	Control Center
+* 
+* Assignment number:
+* 	Recitation Project 4
+* Completion time:
+* 	5 Hours
+*
+* @author Javier Benavides
+* @version 1
+*/
 
 import java.awt.*;
 import java.awt.event.*;

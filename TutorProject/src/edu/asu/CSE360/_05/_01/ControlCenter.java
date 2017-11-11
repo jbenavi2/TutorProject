@@ -1,6 +1,8 @@
 /*
 * Singleton Type class
 * 
+* Only one object exists at a time
+* 
 * stores correct, incorrect, and time of each lesson
 * 
 * Completion time: 5 hours

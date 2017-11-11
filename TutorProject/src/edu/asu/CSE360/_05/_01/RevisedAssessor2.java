@@ -1,5 +1,24 @@
 package edu.asu.CSE360._05._01;
 
+/**
+
+* Description:
+* 	Second Quiz.  Uses Combination of Multiple Choice, T/F, Multiple Answers, and 
+* 	single response type questions
+* 	
+* 	An animated companion provides feedback
+* 
+* 	Immediate grade at end of quiz
+* 
+* Assignment number:
+* 	Recitation Project 4
+* Completion time:
+* 	5 Hours
+*
+* @author Javier Benavides
+* @version 1
+*/
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.concurrent.TimeUnit;
