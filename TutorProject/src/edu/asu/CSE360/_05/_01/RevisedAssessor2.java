@@ -167,18 +167,16 @@ public class RevisedAssessor2 extends JPanel{
 	
 	public void questionTwo() {
 		//create question
-		labelQuestion = new JLabel("Adding ");
+		labelQuestion = new JLabel("Adding white wine to the bottom of a pan that has brown bits is known as deglazing.");
 		labelQuestion.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		//radio buttons with possible answers
-		RBoption1 = new JRadioButton("By size");
-		RBoption2 = new JRadioButton("By expiration date");
-		RBoption3 = new JRadioButton("by quality");
+		RBoption1 = new JRadioButton("True");
+		RBoption2 = new JRadioButton("False");
 		
 		ButtonGroup group = new ButtonGroup();
 		group.add(RBoption1);
 		group.add(RBoption2);
-		group.add(RBoption3);
 		
 		//place questions and options in same panel
 		JPanel questionAnswer = new JPanel();
@@ -186,7 +184,6 @@ public class RevisedAssessor2 extends JPanel{
 		questionAnswer.add(labelQuestion);
 		questionAnswer.add(RBoption1);
 		questionAnswer.add(RBoption2);
-		questionAnswer.add(RBoption3);
 		
 		//initiate companion
 		CompanionPanel companion2 = new CompanionPanel();

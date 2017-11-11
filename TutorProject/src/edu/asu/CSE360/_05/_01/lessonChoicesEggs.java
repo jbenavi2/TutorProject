@@ -67,7 +67,7 @@ public class lessonChoicesEggs extends JPanel {
 		assButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				removeAll();
-				RevisedAssessor quiz = new RevisedAssessor();
+				RevisedAssessor2 quiz = new RevisedAssessor2();
 				setLayout(new BorderLayout());
 				//quiz.questionOne();
 				add(quiz);
